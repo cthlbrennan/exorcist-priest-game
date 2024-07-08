@@ -146,16 +146,6 @@ nav {
     font-family: 'Low Gothic';
 }
 
-#opening-menu-bar button a {
-    padding: 10px;
-    margin: 10px;
-    font-family: 'Low Gothic';
-    text-decoration: none;
-    color: black;
-
-}
-
-
 footer {
     text-align: center;
     background-color: white;
@@ -168,6 +158,50 @@ footer {
 footer a i {
     color: black;
 }
+
+#intro-cinematic-box {
+    display: none;
+    max-width: 128px;
+    max-height: 128px;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem auto;
+}
+
+#intro-cinematic-display {
+    animation: intro-driving-spritesheet 2.8s steps(28) normal;
+ 
+}
+
+
+
+@keyframes intro-driving-spritesheet {
+    from {
+        transform: translate3d(0px, 0, 0)
+    }
+    to {
+        transform: translate3d(-3584px, 0, 0)
+    }
+} 
+
+
+#intro-animation-box {
+    display: block;
+    max-width: 256px;
+    max-height: 256px;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem auto;
+}
+
+#intro-animation-display { 
+    animation: intro-spritesheet 1s steps(13) infinite;
+    width: (3328px / 13);
+} 
+
+
+
+
 
 
 #error-h2 {
