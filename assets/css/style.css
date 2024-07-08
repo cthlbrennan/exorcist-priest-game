@@ -1,0 +1,24 @@
+/* border-box is better than default content-box for precise arrangement of divs, semantic elements, etc */
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    margin-top: 1rem;
+}
