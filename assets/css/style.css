@@ -80,20 +80,18 @@ main {
 }
 
 #dialogue-box  {
-    display: block;
-    z-index: 1;
+    display: none;
     border: double 10px #525561;
     padding: 4px;
     max-width: 300px;
-    display: block;
     align-self: center;
     justify-content: center;
     color: white;
     background-color: #9BADB7;
 }
 
-#dialogue-box p {
-    display: block;
+#dialogue {
+    display: none;
 
 } 
 
@@ -219,11 +217,11 @@ footer a i {
 
 @keyframes driving-outro {
     from {
-        transform: translate3d(-6784px, 0, 0)
+        transform: translate3d(-13568px, 0, 0)
     }
 
     to {
-        transform: translate3d(-8576px, 0, 0)
+        transform: translate3d(-17152px, 0, 0)
     }
 }
 
