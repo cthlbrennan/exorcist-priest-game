@@ -30,9 +30,18 @@
         <div id="intro-animation-box">
             <img id="intro-animation-display" src="assets/images/intro-animation-sheet.png">
         </div>
+        <div id="rules-box">
+            <h2>How to Play</h2>
+            <p>1. Type the prayers before the timer runs out in order to exorcise the demons.</p>
+            <p>2. Every character of every prayer must be typed accurately.</p>
+            <p>3. You have five health points - if you fail to type the prayer in the allotted time, you'll lose a health point.</p>
+            <p>4. If you fail, you'll be able to try again.</p>
+            <p>5. If you lose all five health points, you'll die - bad craic.</p>
+            <p>6. If you pass a round, you'll recover some two additional health points before progressing to the next demon.</p>
+        </div>
         <nav id="opening-menu-bar">
-            <button type="button">Start</button>
-            <button type="button">How to Play</button>
+            <button type="button"><a href="gamepage.html">Start</a></button>
+            <button id="rule-button" type="button" onclick="showRules()">How to Play</button>
         </nav>
     </main>
     <footer>

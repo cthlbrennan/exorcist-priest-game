@@ -27,8 +27,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: #525561;
-
-
 }
 
 header {
@@ -39,9 +37,14 @@ header {
 }
 
 header h1 {
-    letter-spacing: 3px;
+    letter-spacing: 12px;
+    line-height: 150%;
     margin-top: 30px;
     color: white;
+    font-family: 'Gothic Pixel';
+    text-transform: uppercase;
+    font-size: 120%;
+    text-align: center;
 }
 
 #audio-button {
@@ -69,10 +72,13 @@ main {
     flex-basis: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
 #intro-animation-box {
+    display: block;
     max-width: 256px;
     max-height: 256px;
     overflow: hidden;
@@ -93,6 +99,28 @@ main {
         transform: translate3d(-100%, 0, 0)
     }
 } 
+
+#rules-box {
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    background-color: #9BADB7;
+    max-width: 300px;
+    position: relative;
+    border: double 10px #525561;
+}
+#rules-box h2 {
+    margin-bottom: 1rem;
+}
+#rules-box p {
+    font-family: 'Low Gothic';
+    font-size: 130%;
+    padding: 5px;
+}
 
 nav {
     align-items: center;
@@ -117,9 +145,23 @@ nav {
     font-family: 'Low Gothic';
 }
 
+#opening-menu-bar button a {
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Low Gothic';
+    text-decoration: none;
+    color: black;
+
+}
+
+
 footer {
     text-align: center;
     background-color: white;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
 }
 
 footer a i {
