@@ -26,7 +26,18 @@ function startGame(){
     let display = document.getElementById("intro-animation-box")
     display.style.display="none"
 
-    let introCinematic = document.getElementById("intro-cinematic-box")
-    introCinematic.style.display="block"
+    let introCinematicBox = document.getElementById("intro-cinematic-box")
+    introCinematicBox.style.display="block"
+
+    let introCinematicDisplay = document.getElementById("intro-cinematic-display")
+    introCinematicDisplay.addEventListener('animationend', () => {
+        introCinematicDisplay.style.animation="main-driving 1.9s steps(19) infinite";
+        
+    })
+
+    function lastClick() {
+        let introCinematicBox = document.getElementById("intro-cinematic-box")
+        introCinematicBox.style.display="none"
+    }
 
 }

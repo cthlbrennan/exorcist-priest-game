@@ -19,7 +19,7 @@
     padding: 0;
     margin: 0;
     border: 0;
-    font-family: 'FS Underworld';
+    font-family: 'Low Gothic';
 }
 
 body {
@@ -60,7 +60,7 @@ header h1 {
     background-color: #525561;
     border: none;
     padding: 10px;
-    
+
 }
 
 #audio-on {
@@ -72,12 +72,30 @@ main {
     flex-shrink: 0;
     flex-basis: auto;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
 
+#dialogue-box  {
+    display: block;
+    z-index: 1;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 300px;
+    display: block;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7;
+}
+
+#dialogue-box p {
+    display: block;
+
+} 
 
 #intro-animation-box {
     display: block;
@@ -88,37 +106,23 @@ main {
     margin: 1rem auto;
 }
 
-#intro-animation-display { 
+#intro-animation-display {
     animation: intro-spritesheet 3s steps(30) infinite;
-    width: 256px;
-} 
-
-
-/* #intro-animation-box {
-    display: block;
-    max-width: 256px;
-    max-height: 256px;
-    overflow: hidden;
-    position: relative;
-    margin: 1rem auto;
+    width: 7680px;
 }
-
-#intro-animation-display { 
-    animation: intro-spritesheet 1.3s steps(13) infinite;
-    width: (3328px / 13);
-}  */
 
 @keyframes intro-spritesheet {
     from {
         transform: translate3d(0px, 0, 0)
     }
+
     to {
         transform: translate3d(-100%, 0, 0)
     }
-} 
+}
 
 #rules-box {
-    display:none;
+    display: none;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -130,9 +134,11 @@ main {
     position: relative;
     border: double 10px #525561;
 }
+
 #rules-box h2 {
     margin-bottom: 1rem;
 }
+
 #rules-box p {
     font-family: 'Low Gothic';
     font-size: 110%;
@@ -177,45 +183,50 @@ footer a i {
 
 #intro-cinematic-box {
     display: none;
-    background-color: red;
-    max-width: 128px;
-    max-height: 128px;
+    width: 256px;
+    height: 340px;
     overflow: hidden;
     position: relative;
     margin: 1rem auto;
-    z-index: 20;
 }
 
 #intro-cinematic-display {
-    animation: intro-driving-spritesheet 2.8s steps(28) infinite;
-    width: (8576px / 67);
+    animation: intro-driving-spritesheet 5.3s steps(53) normal;
+    width: 17152px;
+    image-rendering: pixelated;
+
 }
-
-
 
 @keyframes intro-driving-spritesheet {
     from {
         transform: translate3d(0px, 0, 0)
     }
+
     to {
-        transform: translate3d(-100%, 0, 0)
+        transform: translate3d(-13568px, 0, 0)
     }
-} 
-
-
-#intro-animation-box {
-    display: block;
-    max-width: 256px;
-    max-height: 256px;
-    overflow: hidden;
-    position: relative;
-    margin: 1rem auto;
 }
 
-#intro-animation-display { 
-    animation: intro-spritesheet 1s steps(13) infinite;
-    width: (3328px / 13);
-} 
+@keyframes main-driving {
+    from {
+        transform: translate3d(-8704px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-13568px, 0, 0)
+    }
+}
+
+@keyframes driving-outro {
+    from {
+        transform: translate3d(-6784px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-8576px, 0, 0)
+    }
+}
+
 
 
 
