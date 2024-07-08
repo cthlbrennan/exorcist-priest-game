@@ -24,6 +24,7 @@
 
 body {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     min-height: 100vh;
     background-color: #525561;
@@ -83,7 +84,7 @@ main {
     max-height: 256px;
     overflow: hidden;
     position: relative;
-    margin: 4em auto;
+    margin: 1rem auto;
 }
 
 #intro-animation-display { 
@@ -118,7 +119,7 @@ main {
 }
 #rules-box p {
     font-family: 'Low Gothic';
-    font-size: 130%;
+    font-size: 110%;
     padding: 5px;
 }
 
@@ -166,4 +167,28 @@ footer {
 
 footer a i {
     color: black;
+}
+
+
+#error-h2 {
+    font-family: 'FS Underworld';
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+    max-width: 300px;
+    margin-bottom: 1rem;
+}
+
+#error-display {
+    align-self: center;
+    margin-bottom: 1rem;
+}
+
+#error-h3 {
+    font-family: 'Low Gothic';
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+    max-width: 300px;
+    margin-bottom: 1rem;
 }
