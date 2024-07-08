@@ -78,6 +78,7 @@ main {
 
 }
 
+
 #intro-animation-box {
     display: block;
     max-width: 256px;
@@ -88,9 +89,24 @@ main {
 }
 
 #intro-animation-display { 
-    animation: intro-spritesheet 1s steps(13) infinite;
-    width: (3328px / 13);
+    animation: intro-spritesheet 3s steps(30) infinite;
+    width: 256px;
 } 
+
+
+/* #intro-animation-box {
+    display: block;
+    max-width: 256px;
+    max-height: 256px;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem auto;
+}
+
+#intro-animation-display { 
+    animation: intro-spritesheet 1.3s steps(13) infinite;
+    width: (3328px / 13);
+}  */
 
 @keyframes intro-spritesheet {
     from {
@@ -161,16 +177,18 @@ footer a i {
 
 #intro-cinematic-box {
     display: none;
+    background-color: red;
     max-width: 128px;
     max-height: 128px;
     overflow: hidden;
     position: relative;
     margin: 1rem auto;
+    z-index: 20;
 }
 
 #intro-cinematic-display {
-    animation: intro-driving-spritesheet 2.8s steps(28) normal;
- 
+    animation: intro-driving-spritesheet 2.8s steps(28) infinite;
+    width: (8576px / 67);
 }
 
 
@@ -180,7 +198,7 @@ footer a i {
         transform: translate3d(0px, 0, 0)
     }
     to {
-        transform: translate3d(-3584px, 0, 0)
+        transform: translate3d(-100%, 0, 0)
     }
 } 
 
