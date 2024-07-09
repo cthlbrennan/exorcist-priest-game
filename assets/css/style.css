@@ -225,11 +225,86 @@ footer a i {
     }
 }
 
+#proceed-button-box {
+    display: none;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#proceed-button {
+    padding: 10px;
+    border: double 10px #525561;
+    min-width: 200px;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7
+}
 
 
+#enemy-animation-box {
+    display: none;
+    background-color: red;
+    z-index: 5;
+    max-width: 256px;
+    max-height: 256px;
+    overflow: hidden;
+    
+    margin: 1rem auto;
+}
 
+#enemy-animation-display {
+    animation: cat-intro 0.4s steps(4) infinite;
+    
+    width: 11264px;
+}
 
+#fight-dialogue-box {
+    display: none;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 300px;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7;
+}
 
+#fight-dialogue {
+    display: none;
+}
+
+@keyframes cat-intro {
+    from {
+        transform: translate3d(-1536px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-2560px, 0, 0)
+    }
+}
+
+@keyframes cat-fight {
+    from {
+        transform: translate3d(-2816px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-4608px, 0, 0)
+    }
+}
+
+@keyframes cat-defeat {
+    from {
+        transform: translate3d(0px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-100%, 0, 0)
+    }
+}
 
 #error-h2 {
     font-family: 'FS Underworld';

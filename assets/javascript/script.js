@@ -31,52 +31,77 @@ function startGame() {
 
     let introCinematicDisplay = document.getElementById("intro-cinematic-display")
     introCinematicDisplay.addEventListener('animationend', () => {
-            introCinematicDisplay.style.animation = "main-driving 1.9s steps(19) infinite";
-            document.getElementById('dialogue-box').style.display = 'block'
-            let dialogueDisplay = document.getElementById('dialogue')
-            dialogueDisplay.style.display = 'block';
+        introCinematicDisplay.style.animation = "main-driving 1.9s steps(19) infinite";
+        document.getElementById('dialogue-box').style.display = 'block'
+        let dialogueDisplay = document.getElementById('dialogue')
+        dialogueDisplay.style.display = 'block';
 
-            setTimeout(function () {
-                dialogueDisplay.innerText = 'It has been months since my sister Niamh has answered any of my letters.';
-            }, 5000);
+        setTimeout(function () {
+            dialogueDisplay.innerText = 'It has been months since my sister Niamh has answered any of my letters.';
+        }, 5000);
 
-            setTimeout(function () {
-                dialogueDisplay.innerText = "I am worried that something might've happened. She is still looking after that weird old man, our uncle Séan.";
-            }, 10000);
+        setTimeout(function () {
+            dialogueDisplay.innerText = "I am worried that something might've happened. She is still looking after that weird old man, our uncle Seosamh Fada.";
+        }, 10000);
 
-            setTimeout(function () {
-                dialogueDisplay.innerText = "She is the real saint. I couldn't listen to his nonsense about brimstone and hellfire anymore.";
-            }, 15000);
+        setTimeout(function () {
+            dialogueDisplay.innerText = "She is the real saint. I couldn't listen to his nonsense about brimstone and hellfire anymore.";
+        }, 15000);
 
-            setTimeout(function () {
-                dialogueDisplay.innerText = "I'm sure she's just been busy...";
-            }, 20000);
+        setTimeout(function () {
+            dialogueDisplay.innerText = "I'm sure she's just been busy...";
+        }, 20000);
 
-            setTimeout(function () {
-                dialogueDisplay.innerText = "...";
-            }, 25000);
+        setTimeout(function () {
+            dialogueDisplay.innerText = "...";
+        }, 25000);
 
+        setTimeout(function () {
+            introCinematicDisplay.style.animation = "driving-outro 1.4s steps(14) normal";
             setTimeout(function () {
-                introCinematicDisplay.style.animation = "driving-outro 1.4s steps(14) normal";
-                setTimeout(function () {
                 document.getElementById('dialogue-box').style.display = 'none'
                 document.getElementById('dialogue').style.display = 'none'
                 introCinematicDisplay.style.display = 'none'
-                }, 1250)
-            }, 28000);
-
-            // setTimeout(function () {
-
-            // }, 31000);
-
-        }
-
-    )
+                document.getElementById('proceed-button-box').style.display = 'block'
+            }, 1350)
+        }, 28000);
 
 
-    function firstRound() {
-        document.getElementById('dialogue-box').style.display = 'none'
-        document.getElementById('dialogue').style.display = 'none'
-    }
+    })
+
+
+
+
+}
+
+function firstRoundPrelude() {
+
+    document.getElementById('enemy-animation-box').style.display = 'block'
+    document.getElementById('fight-dialogue-box').style.display = 'block'
+    document.getElementById('fight-dialogue').style.display = 'block'
+    document.getElementById('proceed-button').textContent = 'Next...'
+    document.getElementById('proceed-button').addEventListener('click', () => {
+        document.getElementById('enemy-animation-display').style.animation = 'cat-fight 0.7s steps(7) infinite'
+        document.getElementById('fight-dialogue').innerText = "Oh shit ! Fluffy's possessed!"
+        document.getElementById('proceed-button').addEventListener('click', () => {
+            document.getElementById('fight-dialogue').innerText = "I better put these rosary beads to use."
+            document.getElementById('proceed-button').addEventListener('click', () => {
+                typingRoundOne()
+            })
+
+        })
+
+    })
+
+function typingRoundOne(){
+    document.getElementById('fight-dialogue').style.display = 'none'
+    document.getElementById('proceed-button-box').style.display = 'none'
+    document.getElementById('prayer-display-box').style.display = 'block'
+    document.getElementById('player-input').style.display='block'
+
+
+
+} 
+
 
 }
