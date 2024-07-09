@@ -298,13 +298,62 @@ footer a i {
 
 @keyframes cat-defeat {
     from {
-        transform: translate3d(0px, 0, 0)
+        transform: translate3d(-4864px, 0, 0)
     }
 
     to {
-        transform: translate3d(-100%, 0, 0)
+        transform: translate3d(-11264px, 0, 0)
     }
 }
+
+#prayer-display-box {
+    display: none;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 300px;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7;
+}
+
+#prayer-display-area {
+    display: none;
+}
+
+#player-input-box {
+    display: none;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 300px;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7
+}
+
+#player-input-area {
+    display: none;
+    padding: 5px;
+    align-self: center;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+#player-input-area:focus {
+    outline-color:#525561;
+}
+
+.correct {
+    color: green;
+  }
+  
+  .incorrect {
+    color: red;
+    text-decoration: underline;
+  }
 
 #error-h2 {
     font-family: 'FS Underworld';
