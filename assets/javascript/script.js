@@ -18,7 +18,7 @@ const prayerArray = [
     "Custodi me a malo!",
     "Sancte Michael Archangele, defende nos in proelio!",
     "Renuntia Satanae et omnibus operibus eius!",
-    "In fide Iesu Christi, te exorcizo!"
+    "In fide Iesu Christi, te exorcizo!",
 ]
 
 
@@ -67,7 +67,7 @@ function startGame() {
         }, 5000);
 
         setTimeout(function () {
-            dialogueDisplay.innerText = "I am worried that something might've happened. She is still looking after that weird old man, our uncle Seosamh Fada.";
+            dialogueDisplay.innerText = "I am worried that something might've happened. She is still looking after that weird old man, our uncle Joe.";
         }, 10000);
 
         setTimeout(function () {
@@ -167,8 +167,8 @@ function typingRoundOne() {
             setTimeout(function () {
                 document.getElementById('fight-dialogue-box').style.display = 'block'
                 document.getElementById('fight-dialogue').style.display = 'block'
-                document.getElementById('prayer-display-box').style.display = 'block'
-                document.getElementById('prayer-display-area').style.display = 'block'
+                document.getElementById('prayer-display-box').style.display = 'none'
+                document.getElementById('prayer-display-area').style.display = 'none'
                 document.getElementById('player-input-box').style.display = 'none'
                 document.getElementById('player-input-area').style.display = 'none'
                 document.getElementById('fight-dialogue').innerText = "Good cat..."
@@ -176,7 +176,10 @@ function typingRoundOne() {
             setTimeout(function () {
                 document.getElementById('fight-dialogue-box').style.display = 'none'
                 document.getElementById('fight-dialogue').style.display = 'none'
-                //secondRoundPrelude()
+                document.getElementById('player-input-area').value = ''
+                document.getElementById('prayer-display-area').innerHTML = '' 
+
+                secondRoundPrelude()
             }, 3000)
 
         }
@@ -184,85 +187,86 @@ function typingRoundOne() {
 
 }
 
-// function secondRoundPrelude() {
+function secondRoundPrelude() {
+    document.getElementById('enemy-animation-display').src = 'assets/images/skeleton-spritesheet.png'
+    document.getElementById('enemy-animation-display').style.animation = 'skeleton-fight 0.4s steps(2) infinite'
+    document.getElementById('enemy-animation-display').style.width = '2560px'
+    document.getElementById('fight-dialogue').innerText = "... Uncle Joe. I bet this is your fault."
+    document.getElementById('enemy-animation-box').style.display = 'block'
+    document.getElementById('fight-dialogue-box').style.display = 'block'
+    document.getElementById('fight-dialogue').style.display = 'block'
+    document.getElementById('proceed-button-box').style.display = 'block'
+    document.getElementById('proceed-button').textContent = 'Next...'
+    document.getElementById('proceed-button').addEventListener('click', () => {
+        document.getElementById('fight-dialogue').innerText = "I've always had a bone to pick with ya, ya bollix."
+        document.getElementById('proceed-button').addEventListener('click', () => {
+            typingRoundTwo()
 
-//     document.getElementById('enemy-animation-box').style.display = 'block'
-//     document.getElementById('fight-dialogue-box').style.display = 'block'
-//     document.getElementById('fight-dialogue').style.display = 'block'
-//     document.getElementById('proceed-button').textContent = 'Next...'
-//     document.getElementById('proceed-button').addEventListener('click', () => {
-//         document.getElementById('enemy-animation-display').style.animation = 'cat-fight 0.7s steps(7) infinite'
-//         document.getElementById('fight-dialogue').innerText = "Oh shit ! Fluffy's possessed!"
-//         document.getElementById('proceed-button').addEventListener('click', () => {
-//             document.getElementById('fight-dialogue').innerText = "I better put these rosary beads to use."
-//             document.getElementById('proceed-button').addEventListener('click', () => {
-//                 typingRoundTwo()
-//                 document.getElementById('player-input-area').focus()
-//             })
+            document.getElementById('player-input-area').focus()
+        })
 
-//         })
+    })
 
-//     })
+}
 
-// }
-// function typingRoundOne() {
-//     document.getElementById('fight-dialogue').style.display = 'none'
-//     document.getElementById('proceed-button-box').style.display = 'none'
-//     document.getElementById('fight-dialogue-box').style.display = 'none'
 
-//     document.getElementById('prayer-display-box').style.display = 'block'
-//     document.getElementById('prayer-display-area').style.display = 'block'
-//     document.getElementById('player-input-box').style.display = 'block'
-//     document.getElementById('player-input-area').style.display = 'block'
-//     // document.getElementById('player-input-area').focus()   causing bug, prevents
+function typingRoundTwo() {
+    document.getElementById('fight-dialogue').style.display = 'none'
+    document.getElementById('proceed-button-box').style.display = 'none'
+    document.getElementById('fight-dialogue-box').style.display = 'none'
 
-//     let randomNumber = Math.floor(Math.random() * 20)
-//     let prayerSelection = prayerArray[randomNumber]
-//     prayerSelection.split('').forEach(character => {
-//         const characterSpan = document.createElement('span')
-//         characterSpan.innerText = character
-//         document.getElementById('prayer-display-box').appendChild(characterSpan)
-//     })
+    document.getElementById('prayer-display-box').style.display = 'block'
+    document.getElementById('prayer-display-area').style.display = 'block'
+    document.getElementById('player-input-box').style.display = 'block'
+    document.getElementById('player-input-area').style.display = 'block'
 
-//     document.getElementById('player-input-box').addEventListener('input', () => {
-//         const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
-//         const allPlayerInputs = document.getElementById('player-input-area').value.split('')
+    let randomNumber = Math.floor(Math.random() * 20)
+    let prayerSelection = prayerArray[randomNumber]
+    prayerSelection.split('').forEach(character => {
+        const characterSpan = document.createElement('span')
+        characterSpan.innerText = character
+        document.getElementById('prayer-display-box').appendChild(characterSpan)
+    })
 
-//         let correct = true
-//         allPrayerSpans.forEach((characterSpan, index) => {
-//             const character = allPlayerInputs[index]
-//             if (character == null) {
-//                 characterSpan.classList.remove('correct')
-//                 characterSpan.classList.remove('incorrect')
-//                 correct = false
-//             } else if (character === characterSpan.innerText) {
-//                 characterSpan.classList.add('correct')
-//                 characterSpan.classList.remove('incorrect')
-//             } else {
-//                 characterSpan.classList.remove('correct')
-//                 characterSpan.classList.add('incorrect')
-//                 correct = false
-//             }
-//         })
+    document.getElementById('player-input-box').addEventListener('input', () => {
+        const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
+        const allPlayerInputs = document.getElementById('player-input-area').value.split('')
 
-//         if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
-//             document.getElementById('enemy-animation-display').style.animation = "cat-defeat 2.5s steps(25) normal";
-//             setTimeout(function () {
-//                 document.getElementById('fight-dialogue-box').style.display = 'block'
-//                 document.getElementById('fight-dialogue').style.display = 'block'
-//                 document.getElementById('prayer-display-box').style.display = 'block'
-//                 document.getElementById('prayer-display-area').style.display = 'block'
-//                 document.getElementById('player-input-box').style.display = 'none'
-//                 document.getElementById('player-input-area').style.display = 'none'
-//                 document.getElementById('fight-dialogue').innerText = "Good cat..."
-//             }, 1000)
-//             setTimeout(function () {
-//                 document.getElementById('fight-dialogue-box').style.display = 'none'
-//                 document.getElementById('fight-dialogue').style.display = 'none'
-//                 //secondRoundPrelude()
-//             }, 3000)
+        let correct = true
+        allPrayerSpans.forEach((characterSpan, index) => {
+            const character = allPlayerInputs[index] 
+                if (character == null) {
+                    characterSpan.classList.remove('correct')
+                    characterSpan.classList.remove('incorrect')
+                    correct = false
+                } else if (character === characterSpan.innerText) {
+                characterSpan.classList.add('correct')
+                characterSpan.classList.remove('incorrect')
+            } else {
+                characterSpan.classList.remove('correct')
+                characterSpan.classList.add('incorrect')
+                correct = false
+            }
+        })
 
-//         }
-//     })
+        if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
+            document.getElementById('enemy-animation-display').style.animation = "skeleton-defeat 1s steps(5) normal";
+            setTimeout(function () {
+                document.getElementById('fight-dialogue-box').style.display = 'block'
+                document.getElementById('fight-dialogue').style.display = 'block'
+                document.getElementById('prayer-display-box').style.display = 'block'
+                document.getElementById('prayer-display-area').style.display = 'block'
+                document.getElementById('player-input-box').style.display = 'none'
+                document.getElementById('player-input-area').style.display = 'none'
+                document.getElementById('fight-dialogue').innerText = "... good riddance."
+            }, 1000)
+            setTimeout(function () {
+                document.getElementById('fight-dialogue-box').style.display = 'none'
+                document.getElementById('fight-dialogue').style.display = 'none'
+                //thirdRoundPrelude()
+            }, 3000)
 
-// }
+        }
+    })
+
+}
