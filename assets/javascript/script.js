@@ -167,18 +167,17 @@ function typingRoundOne() {
             setTimeout(function () {
                 document.getElementById('fight-dialogue-box').style.display = 'block'
                 document.getElementById('fight-dialogue').style.display = 'block'
+                document.getElementById('fight-dialogue').innerText = "Good cat..."
+                document.getElementById('player-input-area').value = null
+                document.getElementById('prayer-display-box').innerHTML = '' 
                 document.getElementById('prayer-display-box').style.display = 'none'
                 document.getElementById('prayer-display-area').style.display = 'none'
                 document.getElementById('player-input-box').style.display = 'none'
                 document.getElementById('player-input-area').style.display = 'none'
-                document.getElementById('fight-dialogue').innerText = "Good cat..."
             }, 1000)
             setTimeout(function () {
                 document.getElementById('fight-dialogue-box').style.display = 'none'
                 document.getElementById('fight-dialogue').style.display = 'none'
-                document.getElementById('player-input-area').value = ''
-                document.getElementById('prayer-display-area').innerHTML = '' 
-
                 secondRoundPrelude()
             }, 3000)
 
