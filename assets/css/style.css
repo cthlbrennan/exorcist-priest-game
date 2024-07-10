@@ -355,23 +355,33 @@ footer a i {
     text-decoration: underline;
   }
 
-@keyframes skeleton-fight {
+  @keyframes skeleton-intro {
     from {
         transform: translate3d(0px, 0, 0)
     }
 
     to {
-        transform: translate3d(-512px, 0, 0)
+        transform: translate3d(-1280px, 0, 0)
+    }
+}
+
+@keyframes skeleton-fight {
+    from {
+        transform: translate3d(-1536px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-1792px, 0, 0)
     }
 }
 
 @keyframes skeleton-defeat {
     from {
-        transform: translate3d(-1024px, 0, 0)
+        transform: translate3d(-2560x, 0, 0)
     }
 
     to {
-        transform: translate3d(-2304px, 0, 0)
+        transform: translate3d(-5376px, 0, 0)
     }
 }
 
