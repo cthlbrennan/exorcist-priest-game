@@ -93,6 +93,7 @@ function startGame() {
             setTimeout(function () {
                 document.getElementById('dialogue-box').style.display = 'none'
                 document.getElementById('dialogue').style.display = 'none'
+                document.getElementById('intro-cinematic-box').style.display = 'none'                
                 introCinematicDisplay.style.display = 'none'
                 document.getElementById('proceed-button-box').style.display = 'block'
                 document.getElementById('proceed-button').addEventListener('click', firstRoundPrelude)
@@ -493,14 +494,21 @@ function outroCinematicDialogueThree() {
 
 }
 
-function resetGame() {
-    let heading = document.getElementById("heading")
-    heading.style.display = "flex"
-    let menu = document.getElementById("opening-menu-bar")
-    menu.style.display = "flex"
-    let display = document.getElementById("intro-animation-box")
-    display.style.display = "block"
-    document.getElementById('outro-cinematic-box').style.display = 'none'
+function resetGame(){
+            window.location.reload();
+      }
+      
+
+// function resetGame() {
+//     let heading = document.getElementById("heading")
+//     heading.style.display = "flex"
+//     let menu = document.getElementById("opening-menu-bar")
+//     menu.style.display = "flex"
+//     let display = document.getElementById("intro-animation-box")
+//     display.style.display = "block"
+//     document.getElementById('outro-cinematic-box').style.display = 'none'
+//     document.getElementById("intro-animation-display").style.display='block'
 
 
-}
+
+// }

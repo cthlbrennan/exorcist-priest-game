@@ -88,10 +88,12 @@ main {
     justify-content: center;
     color: white;
     background-color: #9BADB7;
+    z-index: 20;
 }
 
 #dialogue {
     display: none;
+    z-index: 20;
 
 } 
 
@@ -182,9 +184,10 @@ footer a i {
 #intro-cinematic-box {
     display: none;
     width: 256px;
-    height: 340px;
+    height: 450x;
     overflow: hidden;
     position: relative;
+    z-index: 20;
     margin: 1rem auto;
 }
 
@@ -247,7 +250,6 @@ footer a i {
 #enemy-animation-box {
     display: none;
     background-color: red;
-    z-index: 5;
     max-width: 256px;
     max-height: 256px;
     overflow: hidden;
