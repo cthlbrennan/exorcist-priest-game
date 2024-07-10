@@ -33,10 +33,13 @@ function showRules() {
         rulesBox.style.display = "flex"
         animationBox.style.display = "none"
         document.getElementById('start-game').style.display = 'none'
+        document.getElementById('rule-button').innerText = 'Return'
     } else {
         document.getElementById('start-game').style.display = 'block'
         rulesBox.style.display = "none"
         animationBox.style.display = "block"
+        document.getElementById('rule-button').innerText = 'How to Play'
+
     }
 
 
@@ -67,7 +70,7 @@ function startGame() {
 
         setTimeout(function () {
             dialogueDisplay.innerText = 'It has been months since my sister Niamh has answered any of my letters.';
-        }, 5000);
+        }, 1000);
 
         setTimeout(function () {
             dialogueDisplay.innerText = "I am worried that something might've happened. She is still looking after that weird old man, our uncle Joe.";
@@ -176,19 +179,24 @@ function typingRoundOne() {
                 document.getElementById('player-input-box').style.display = 'none'
                 document.getElementById('fight-dialogue-box').style.display = 'block'
                 document.getElementById('fight-dialogue').style.display = 'block'
+                document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
                 document.getElementById('fight-dialogue').innerText = "Good cat..."
 
                 document.getElementById('prayer-display-box').style.display = 'none'
                 document.getElementById('prayer-display-area').style.display = 'none'
 
-            }, 1000)
+            }, 10)
             setTimeout(function () {
                 document.getElementById('enemy-animation-box').style.display = 'none'
+                document.getElementById('enemy-animation-display').style.display = 'none'
                 document.getElementById('enemy-animation-display').src = 'assets/images/skeleton-sprite-sheet.png'
-
                 document.getElementById('fight-dialogue-box').style.display = 'none'
+                document.getElementById('enemy-animation-display').style.animation = ''
+                document.getElementById('enemy-animation-display').style.animation = 'skeleton-intro 0.7s steps(7) normal'
+                document.getElementById('enemy-animation-display').style.width = '5632px'
                 document.getElementById('fight-dialogue').style.display = 'none'
                 document.getElementById('proceed-button-box').style.display = 'block'
+                document.getElementById('player-input-area').value = ''
                 document.getElementById('proceed-button').innerText = 'Continue'
                 document.getElementById('proceed-button').addEventListener('click', secondRoundPrelude)
             }, 3000)
@@ -206,28 +214,31 @@ function typingRoundOne() {
 
 function secondRoundPrelude() {
     document.getElementById('proceed-button').removeEventListener('click', secondRoundPrelude)
-    document.getElementById('enemy-animation-display').src = 'assets/images/skeleton-sprite-sheet.png'
     document.getElementById('enemy-animation-box').style.display = 'block'
+    document.getElementById('enemy-animation-display').style.display = 'block'
+    document.getElementById('enemy-animation-display').addEventListener('animationend', secondRoundPreludeDialogue)
+}
+
+function secondRoundPreludeDialogue() {
+    document.getElementById('enemy-animation-display').removeEventListener('animationend', secondRoundPreludeDialogue)
+    document.getElementById('enemy-animation-display').style.animation = ''
     document.getElementById('enemy-animation-display').style.animation = 'skeleton-fight 0.4 steps(2) infinite'
-    document.getElementById('enemy-animation-display').style.width = '5632px'
     document.getElementById('fight-dialogue').innerText = "... Uncle Joe. I bet this is your fault."
     document.getElementById('fight-dialogue-box').style.display = 'block'
     document.getElementById('fight-dialogue').style.display = 'block'
-    document.getElementById('player-input-box').style.display = 'none'
-    document.getElementById('player-input-area').style.display = 'none'
     document.getElementById('proceed-button-box').style.display = 'block'
     document.getElementById('proceed-button').textContent = 'Next...'
-    document.getElementById('proceed-button').addEventListener('click', () => {
-        document.getElementById('fight-dialogue').innerText = "I've always had a bone to pick with ya, ya bollix."
-        document.getElementById('proceed-button').addEventListener('click', () => {
-            typingRoundTwo()
-
-            document.getElementById('player-input-area').focus()
-        })
-
-    })
-
+    document.getElementById('proceed-button').addEventListener('click', secondRoundPreludeDialogueTwo)
 }
+
+function secondRoundPreludeDialogueTwo() {
+    document.getElementById('proceed-button').removeEventListener('click', secondRoundPreludeDialogueTwo)
+    document.getElementById('fight-dialogue').innerText = "I've always had a bone to pick with ya, ya bollix."
+    document.getElementById('proceed-button').addEventListener('click', typingRoundTwo)
+    document.getElementById('player-input-area').focus()
+}
+
+
 
 // function firstRoundPrelude() {
 //     document.getElementById('proceed-button').removeEventListener('click', firstRoundPrelude)
@@ -253,63 +264,175 @@ function secondRoundPrelude() {
 
 // }
 
-// function typingRoundTwo() {
-//     document.getElementById('fight-dialogue').style.display = 'none'
-//     document.getElementById('proceed-button-box').style.display = 'none'
-//     document.getElementById('fight-dialogue-box').style.display = 'none'
+function typingRoundTwo() {
+    document.getElementById('proceed-button').removeEventListener('click', typingRoundTwo)
+    document.getElementById('player-input-area').focus()
 
-//     document.getElementById('prayer-display-box').style.display = 'block'
-//     document.getElementById('prayer-display-area').style.display = 'block'
-//     document.getElementById('player-input-box').style.display = 'block'
-//     document.getElementById('player-input-area').style.display = 'block'
+    document.getElementById('fight-dialogue').style.display = 'none'
+    document.getElementById('proceed-button-box').style.display = 'none'
+    document.getElementById('fight-dialogue-box').style.display = 'none'
 
-//     let randomNumber = Math.floor(Math.random() * 20)
-//     let prayerSelection = prayerArray[randomNumber]
-//     prayerSelection.split('').forEach(character => {
-//         const characterSpan = document.createElement('span')
-//         characterSpan.innerText = character
-//         document.getElementById('prayer-display-box').appendChild(characterSpan)
-//     })
+    document.getElementById('prayer-display-box').style.display = 'block'
+    document.getElementById('prayer-display-area').style.display = 'block'
+    document.getElementById('player-input-box').style.display = 'block'
+    document.getElementById('player-input-area').style.display = 'block'
 
-//     document.getElementById('player-input-box').addEventListener('input', () => {
-//         const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
-//         const allPlayerInputs = document.getElementById('player-input-area').value.split('')
+    let randomNumber = Math.floor(Math.random() * 20)
+    let prayerSelection = prayerArray[randomNumber]
+    prayerSelection.split('').forEach(character => {
+        const characterSpan = document.createElement('span')
+        characterSpan.innerText = character
+        document.getElementById('prayer-display-box').appendChild(characterSpan)
+    })
 
-//         let correct = true
-//         allPrayerSpans.forEach((characterSpan, index) => {
-//             const character = allPlayerInputs[index]
-//             if (character == null) {
-//                 characterSpan.classList.remove('correct')
-//                 characterSpan.classList.remove('incorrect')
-//                 correct = false
-//             } else if (character === characterSpan.innerText) {
-//                 characterSpan.classList.add('correct')
-//                 characterSpan.classList.remove('incorrect')
-//             } else {
-//                 characterSpan.classList.remove('correct')
-//                 characterSpan.classList.add('incorrect')
-//                 correct = false
-//             }
-//         })
+    document.getElementById('player-input-box').addEventListener('input', () => {
+        const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
+        const allPlayerInputs = document.getElementById('player-input-area').value.split('')
 
-//         if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
-//             document.getElementById('enemy-animation-display').style.animation = "skeleton-defeat 1s steps(5) normal";
-//             setTimeout(function () {
-//                 document.getElementById('fight-dialogue-box').style.display = 'block'
-//                 document.getElementById('fight-dialogue').style.display = 'block'
-//                 document.getElementById('prayer-display-box').style.display = 'block'
-//                 document.getElementById('prayer-display-area').style.display = 'block'
-//                 document.getElementById('player-input-box').style.display = 'none'
-//                 document.getElementById('player-input-area').style.display = 'none'
-//                 document.getElementById('fight-dialogue').innerText = "... good riddance."
-//             }, 1000)
-//             setTimeout(function () {
-//                 document.getElementById('fight-dialogue-box').style.display = 'none'
-//                 document.getElementById('fight-dialogue').style.display = 'none'
-//                 //thirdRoundPrelude()
-//             }, 3000)
+        let correct = true
+        allPrayerSpans.forEach((characterSpan, index) => {
+            const character = allPlayerInputs[index]
+            if (character == null) {
+                characterSpan.classList.remove('correct')
+                characterSpan.classList.remove('incorrect')
+                correct = false
+            } else if (character === characterSpan.innerText) {
+                characterSpan.classList.add('correct')
+                characterSpan.classList.remove('incorrect')
+            } else {
+                characterSpan.classList.remove('correct')
+                characterSpan.classList.add('incorrect')
+                correct = false
+            }
+        })
 
-//         }
-//     })
+        if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
+            document.getElementById('enemy-animation-display').style.animation = "";
+            document.getElementById('enemy-animation-display').style.animation = "skeleton-defeat 2.2s steps(11) normal";
+            setTimeout(function () {
+                document.getElementById('player-input-box').style.display = 'none'
+                document.getElementById('fight-dialogue-box').style.display = 'block'
+                document.getElementById('fight-dialogue').style.display = 'block'
+                document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
+                document.getElementById('fight-dialogue').innerText = "Good riddance..."
 
-// }
+                document.getElementById('prayer-display-box').style.display = 'none'
+                document.getElementById('prayer-display-area').style.display = 'none'
+
+            }, 10)
+            setTimeout(function () {
+                document.getElementById('enemy-animation-box').style.display = 'none'
+                document.getElementById('enemy-animation-display').style.display = 'none'
+                document.getElementById('enemy-animation-display').src = 'assets/images/girl-sprite-sheet.png'
+                document.getElementById('enemy-animation-display').style.animation = ''
+                document.getElementById('enemy-animation-display').style.animation = 'girl-intro 1.4s steps(7) normal'
+                document.getElementById('enemy-animation-display').style.imageRendering = 'pixelated'
+                document.getElementById('enemy-animation-display').style.width = '8960px'
+                document.getElementById('fight-dialogue-box').style.display = 'none'
+                document.getElementById('fight-dialogue').style.display = 'none'
+                document.getElementById('proceed-button-box').style.display = 'block'
+                document.getElementById('player-input-area').value = ''
+                document.getElementById('proceed-button').innerText = 'Continue'
+                document.getElementById('proceed-button').addEventListener('click', thirdRoundPrelude)
+            }, 3000)
+
+        }
+    })
+
+}
+
+function thirdRoundPrelude() {
+    document.getElementById('proceed-button').removeEventListener('click', thirdRoundPrelude)
+    document.getElementById('enemy-animation-box').style.display = 'block'
+    document.getElementById('enemy-animation-display').style.display = 'block'
+    document.getElementById('enemy-animation-display').addEventListener('animationend', thirdRoundPreludeDialogue)
+}
+
+function thirdRoundPreludeDialogue() {
+    document.getElementById('enemy-animation-display').removeEventListener('animationend', thirdRoundPreludeDialogue)
+    document.getElementById('enemy-animation-display').style.animation = 'girl-fight 0.8s steps(4) infinite'
+    document.getElementById('fight-dialogue').innerText = "Oh no! Times have been tough alright since I've been gone."
+    document.getElementById('fight-dialogue-box').style.display = 'block'
+    document.getElementById('fight-dialogue').style.display = 'block'
+    document.getElementById('proceed-button-box').style.display = 'block'
+    document.getElementById('proceed-button').textContent = 'Next...'
+    document.getElementById('proceed-button').addEventListener('click', thirdRoundPreludeDialogueTwo)
+}
+
+
+
+function thirdRoundPreludeDialogueTwo() {
+    document.getElementById('proceed-button').removeEventListener('click', thirdRoundPreludeDialogueTwo)
+    document.getElementById('fight-dialogue').innerText = "Luckily, I'm class at being a priest."
+    document.getElementById('proceed-button').addEventListener('click', typingRoundThree)
+}
+
+function typingRoundThree() {
+    document.getElementById('proceed-button').removeEventListener('click', typingRoundThree)
+
+    document.getElementById('fight-dialogue').style.display = 'none'
+    document.getElementById('proceed-button-box').style.display = 'none'
+    document.getElementById('fight-dialogue-box').style.display = 'none'
+
+    document.getElementById('prayer-display-box').style.display = 'block'
+    document.getElementById('prayer-display-area').style.display = 'block'
+    document.getElementById('player-input-box').style.display = 'block'
+    document.getElementById('player-input-area').style.display = 'block'
+
+    let randomNumber = Math.floor(Math.random() * 20)
+    let prayerSelection = prayerArray[randomNumber]
+    prayerSelection.split('').forEach(character => {
+        const characterSpan = document.createElement('span')
+        characterSpan.innerText = character
+        document.getElementById('prayer-display-box').appendChild(characterSpan)
+    })
+
+    document.getElementById('player-input-box').addEventListener('input', () => {
+        const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
+        const allPlayerInputs = document.getElementById('player-input-area').value.split('')
+
+        let correct = true
+        allPrayerSpans.forEach((characterSpan, index) => {
+            const character = allPlayerInputs[index]
+            if (character == null) {
+                characterSpan.classList.remove('correct')
+                characterSpan.classList.remove('incorrect')
+                correct = false
+            } else if (character === characterSpan.innerText) {
+                characterSpan.classList.add('correct')
+                characterSpan.classList.remove('incorrect')
+            } else {
+                characterSpan.classList.remove('correct')
+                characterSpan.classList.add('incorrect')
+                correct = false
+            }
+        })
+
+        if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
+            document.getElementById('enemy-animation-display').style.animation = "girl-defeat 4.4s steps(22) normal";
+            setTimeout(function () {
+                document.getElementById('player-input-box').style.display = 'none'
+                document.getElementById('fight-dialogue-box').style.display = 'block'
+                document.getElementById('fight-dialogue').style.display = 'block'
+                document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
+                document.getElementById('fight-dialogue').innerText = "Phew..."
+
+                document.getElementById('prayer-display-box').style.display = 'none'
+                document.getElementById('prayer-display-area').style.display = 'none'
+
+            }, 10)
+            setTimeout(function () {
+                document.getElementById('enemy-animation-box').style.display = 'none'
+                document.getElementById('enemy-animation-display').style.display = 'none'
+                document.getElementById('fight-dialogue-box').style.display = 'none'
+                document.getElementById('fight-dialogue').style.display = 'none'
+                document.getElementById('proceed-button-box').style.display = 'block'
+                document.getElementById('player-input-area').value = ''
+                document.getElementById('proceed-button').innerText = 'Continue'
+                document.getElementById('proceed-button').addEventListener('click', outroCinematic)
+            }, 3000)
+
+        }
+    })
+
+}

@@ -361,7 +361,7 @@ footer a i {
     }
 
     to {
-        transform: translate3d(-1280px, 0, 0)
+        transform: translate3d(-1792px, 0, 0)
     }
 }
 
@@ -377,11 +377,41 @@ footer a i {
 
 @keyframes skeleton-defeat {
     from {
-        transform: translate3d(-2560x, 0, 0)
+        transform: translate3d(-2560px, 0, 0)
     }
 
     to {
         transform: translate3d(-5376px, 0, 0)
+    }
+}
+
+@keyframes girl-intro {
+    from {
+        transform: translate3d(0px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-1792px, 0, 0)
+    }
+}
+
+@keyframes girl-fight {
+    from {
+        transform: translate3d(-1536px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-2560px, 0, 0)
+    }
+}
+
+@keyframes girl-defeat {
+    from {
+        transform: translate3d(-3072px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-8704px, 0, 0)
     }
 }
 
