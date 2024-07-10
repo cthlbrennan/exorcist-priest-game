@@ -267,6 +267,7 @@ function secondRoundPreludeDialogueTwo() {
 function typingRoundTwo() {
     document.getElementById('proceed-button').removeEventListener('click', typingRoundTwo)
     document.getElementById('player-input-area').focus()
+                document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
 
     document.getElementById('fight-dialogue').style.display = 'none'
     document.getElementById('proceed-button-box').style.display = 'none'
@@ -364,6 +365,8 @@ function thirdRoundPreludeDialogue() {
 function thirdRoundPreludeDialogueTwo() {
     document.getElementById('proceed-button').removeEventListener('click', thirdRoundPreludeDialogueTwo)
     document.getElementById('fight-dialogue').innerText = "Luckily, I'm class at being a priest."
+    document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
+
     document.getElementById('proceed-button').addEventListener('click', typingRoundThree)
 }
 
@@ -373,6 +376,7 @@ function typingRoundThree() {
     document.getElementById('fight-dialogue').style.display = 'none'
     document.getElementById('proceed-button-box').style.display = 'none'
     document.getElementById('fight-dialogue-box').style.display = 'none'
+    document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
 
     document.getElementById('prayer-display-box').style.display = 'block'
     document.getElementById('prayer-display-area').style.display = 'block'
