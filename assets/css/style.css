@@ -415,6 +415,63 @@ footer a i {
     }
 }
 
+#outro-cinematic-box {
+    display: none;
+    width: 256px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem auto;
+}
+
+#outro-dialogue-box  {
+    display: none;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 300px;
+    align-self: center;
+    justify-content: flex-start;
+    color: white;
+    background-color: #9BADB7;
+}
+#outro-dialogue {
+    display: none;
+
+} 
+
+#outro-cinematic-display {
+    image-rendering: pixelated;
+
+}
+
+#outro-proceed-button-box {
+    display: none;
+    justify-content:flex-start;
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#outro-proceed-button {
+    padding: 10px;
+    border: double 10px #525561;
+    min-width: 200px;
+    align-self: center;
+    justify-content: flex-start;
+    color: white;
+    background-color: #9BADB7
+}
+
+@keyframes tea-ending {
+    from {
+        transform: translate3d(0px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-100%, 0, 0)
+    }
+}
+
 #error-h2 {
     font-family: 'FS Underworld';
     text-align: center;

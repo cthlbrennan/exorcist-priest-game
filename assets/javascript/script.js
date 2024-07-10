@@ -267,7 +267,7 @@ function secondRoundPreludeDialogueTwo() {
 function typingRoundTwo() {
     document.getElementById('proceed-button').removeEventListener('click', typingRoundTwo)
     document.getElementById('player-input-area').focus()
-                document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
+    document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
 
     document.getElementById('fight-dialogue').style.display = 'none'
     document.getElementById('proceed-button-box').style.display = 'none'
@@ -438,5 +438,69 @@ function typingRoundThree() {
 
         }
     })
+
+}
+
+function outroCinematic() {
+    document.getElementById('intro-cinematic-box').style.display = 'none'
+    document.getElementById('enemy-animation-box').style.display = 'none'
+    document.getElementById('enemy-animation-display').style.display = 'none'
+    document.getElementById('fight-dialogue-box').style.display = 'none'
+    document.getElementById('fight-dialogue').style.display = 'none'
+    document.getElementById('outro-proceed-button').removeEventListener('click', resetGame)
+    document.getElementById('proceed-button').removeEventListener('click', outroCinematic)
+    document.getElementById('proceed-button').style.display = 'none'
+    document.getElementById('outro-cinematic-box').style.display = 'block'
+    document.getElementById('outro-dialogue-box').style.display = 'block'
+    document.getElementById('outro-dialogue').style.display = 'block'
+    document.getElementById('outro-cinematic-display').style.display = 'block'
+    document.getElementById('outro-proceed-button-box').style.display = 'block'
+    document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogue)
+}
+
+function outroCinematicDialogue() {
+    document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogue)
+    document.getElementById('outro-dialogue-box').innerText = 'Typical. He was always ignorant enough.'
+    document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogueTwo)
+}
+
+function outroCinematicDialogueTwo() {
+    document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogueTwo)
+    document.getElementById('outro-dialogue-box').innerText = "No harm no foul anyway, I suppose."
+    document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogueThree)
+
+}
+
+function outroCinematicDialogueTwo() {
+    document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogueTwo)
+    document.getElementById('outro-dialogue-box').innerText = "Definitely deserve a tea after all that."
+    document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogueThree)
+
+}
+
+function outroCinematicDialogueThree() {
+    document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogueThree)
+    document.getElementById('outro-cinematic-display').src = 'assets/images/tea-sheet.png'
+    document.getElementById('outro-cinematic-display').style.animation = "tea-ending 1.6s steps(4) infinite"
+    document.getElementById('outro-cinematic-display').style.width = '1024px'
+
+
+    document.getElementById('outro-dialogue-box').innerText = "Definitely deserve a tea after all that."
+    document.getElementById('outro-proceed-button').innerText="Return to Main Menu"
+
+    document.getElementById('outro-dialogue-box').innerText = "The End."
+    document.getElementById('outro-proceed-button').addEventListener('click', resetGame)
+
+}
+
+function resetGame() {
+    let heading = document.getElementById("heading")
+    heading.style.display = "flex"
+    let menu = document.getElementById("opening-menu-bar")
+    menu.style.display = "flex"
+    let display = document.getElementById("intro-animation-box")
+    display.style.display = "block"
+    document.getElementById('outro-cinematic-box').style.display = 'none'
+
 
 }
