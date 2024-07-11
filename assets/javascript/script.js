@@ -532,7 +532,7 @@ function outroCinematicDialogueTwo() {
 
 function outroCinematicDialogueTwo() {
     document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogueTwo)
-    document.getElementById('outro-dialogue-box').innerText = "Definitely deserve a tea after all that."
+    document.getElementById('outro-dialogue-box').innerText = "Definitely deserve a cup of tea after all that."
     document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogueThree)
     document.getElementById('outro-proceed-button').focus()
 
@@ -540,13 +540,13 @@ function outroCinematicDialogueTwo() {
 }
 
 function outroCinematicDialogueThree() {
+    document.getElementById('outro-cinematic-box').style.width='256px'
     document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogueThree)
     document.getElementById('outro-cinematic-display').src = 'assets/images/tea-sheet.png'
     document.getElementById('outro-cinematic-display').style.animation = "tea-ending 1.6s steps(4) infinite"
     document.getElementById('outro-cinematic-display').style.width = '1024px'
 
 
-    document.getElementById('outro-dialogue-box').innerText = "Definitely deserve a tea after all that."
     document.getElementById('outro-proceed-button').innerText = "Return to Main Menu"
 
     document.getElementById('outro-dialogue-box').innerText = "The End."
@@ -602,7 +602,7 @@ function startCountdown() {
             clearInterval(countdownInterval);
             loseGame();
         }
-    }, 1000);
+    }, 1500);
 }
 // function resetGame() {
 //     let heading = document.getElementById("heading")
