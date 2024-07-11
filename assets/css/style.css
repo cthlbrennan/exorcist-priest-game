@@ -88,12 +88,10 @@ main {
     justify-content: center;
     color: white;
     background-color: #9BADB7;
-    z-index: 20;
 }
 
 #dialogue {
     display: none;
-    z-index: 20;
 
 }
 
@@ -448,7 +446,6 @@ footer a i {
     display: none;
     border: double 10px #525561;
     padding: 4px;
-    max-width: 300px;
     align-self: center;
     justify-content: center;
     color: white;
@@ -468,7 +465,7 @@ footer a i {
 
 #outro-proceed-button-box {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-self: center;
     align-items: center;
     text-align: center;
@@ -564,4 +561,24 @@ footer a i {
     color: #525561;
     background-color: #9BADB7;
 
+}
+
+
+@media screen and (min-width: 768px) {
+
+#intro-animation-box {
+    max-width: 512px;
+    max-height: 512px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem auto;
+}
+
+#intro-animation-display {
+    width: 15360px;
+    height: 512px;
+    image-rendering: pixelated;
+
+}
 }

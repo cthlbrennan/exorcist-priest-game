@@ -628,16 +628,3 @@ function startCountdown() {
         }
     }, 1500);
 }
-// function resetGame() {
-//     let heading = document.getElementById("heading")
-//     heading.style.display = "flex"
-//     let menu = document.getElementById("opening-menu-bar")
-//     menu.style.display = "flex"
-//     let display = document.getElementById("intro-animation-box")
-//     display.style.display = "block"
-//     document.getElementById('outro-cinematic-box').style.display = 'none'
-//     document.getElementById("intro-animation-display").style.display='block'
-
-
-
-// }
