@@ -167,8 +167,11 @@ function typingRoundOne() {
         if (timer <= 0) {
             clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
             loseGame();
+        } else {
+            
         }
     }, 1000);
+
     document.getElementById('timer-box').style.display = 'block'
     document.getElementById('timer').style.display = 'block'
 
@@ -284,6 +287,9 @@ function typingRoundTwo() {
         characterSpan.innerText = character
         document.getElementById('prayer-display-box').appendChild(characterSpan)
     })
+
+    clearInterval(countdownInterval)
+    timerElement.innerText="10"
 
     countdownInterval = setInterval(function () {
         timer--;
@@ -501,6 +507,9 @@ function outroCinematic() {
     document.getElementById('outro-cinematic-display').style.display = 'block'
     document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogue)
     document.getElementById('outro-proceed-button').focus()
+    document.getElementById('outro-proceed-button-box').style.display='flex'
+
+    document.getElementById('outro-proceed-button').style.display='block'
 }
 
 function outroCinematicDialogue() {

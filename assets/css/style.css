@@ -456,9 +456,10 @@ footer a i {
 }
 
 #outro-proceed-button-box {
-    display: none;
+    display: flex;
     justify-content:flex-start;
     align-self: center;
+    align-items: center;
     text-align: center;
     padding: 5px;
 }
