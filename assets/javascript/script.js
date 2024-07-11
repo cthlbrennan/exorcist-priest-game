@@ -20,7 +20,9 @@ const prayerArray = [
     "Renuntia Satanae et omnibus operibus eius!",
     "In fide Iesu Christi, te exorcizo!",
 ]
-
+var timerElement = document.getElementById('timer');
+var timer = parseInt(timerElement.innerText);
+var countdownInterval;
 document.getElementById('start-game').addEventListener('click', startGame)
 document.getElementById('rule-button').addEventListener('click', showRules)
 
@@ -93,10 +95,12 @@ function startGame() {
             setTimeout(function () {
                 document.getElementById('dialogue-box').style.display = 'none'
                 document.getElementById('dialogue').style.display = 'none'
-                document.getElementById('intro-cinematic-box').style.display = 'none'                
+                document.getElementById('intro-cinematic-box').style.display = 'none'
                 introCinematicDisplay.style.display = 'none'
                 document.getElementById('proceed-button-box').style.display = 'block'
                 document.getElementById('proceed-button').addEventListener('click', firstRoundPrelude)
+                document.getElementById('proceed-button').focus()
+
             }, 1350)
         }, 1000);
 
@@ -110,6 +114,8 @@ function startGame() {
 
 function firstRoundPrelude() {
     document.getElementById('proceed-button').removeEventListener('click', firstRoundPrelude)
+    document.getElementById('proceed-button').focus()
+
     document.getElementById('enemy-animation-box').style.display = 'block'
     document.getElementById('fight-dialogue-box').style.display = 'block'
     document.getElementById('fight-dialogue').style.display = 'block'
@@ -122,14 +128,15 @@ function firstRoundPreludeDialogue() {
     document.getElementById('fight-dialogue').innerText = "Oh shit ! Fluffy's possessed!"
     document.getElementById('proceed-button').removeEventListener('click', firstRoundPreludeDialogue)
     document.getElementById('proceed-button').addEventListener('click', firstRoundPreludeDialogueTwo)
+    document.getElementById('proceed-button').focus()
+
 }
 
 function firstRoundPreludeDialogueTwo() {
     document.getElementById('fight-dialogue').innerText = "I better put these rosary beads to use."
     document.getElementById('proceed-button').removeEventListener('click', firstRoundPreludeDialogueTwo)
     document.getElementById('proceed-button').addEventListener('click', typingRoundOne)
-    document.getElementById('player-input-area').focus()
-
+    document.getElementById('proceed-button').focus()
 }
 
 
@@ -143,7 +150,7 @@ function typingRoundOne() {
     document.getElementById('prayer-display-area').style.display = 'block'
     document.getElementById('player-input-box').style.display = 'block'
     document.getElementById('player-input-area').style.display = 'block'
-    // document.getElementById('player-input-area').focus()   causing bug, prevents
+    document.getElementById('player-input-area').focus()
 
     let randomNumber = Math.floor(Math.random() * 20)
     let prayerSelection = prayerArray[randomNumber]
@@ -152,6 +159,19 @@ function typingRoundOne() {
         characterSpan.innerText = character
         document.getElementById('prayer-display-box').appendChild(characterSpan)
     })
+
+    countdownInterval = setInterval(function () {
+        timer--;
+        timerElement.innerText = timer.toString(); // Convert timer to string for display
+
+        if (timer <= 0) {
+            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
+            loseGame();
+        }
+    }, 1000);
+    document.getElementById('timer-box').style.display = 'block'
+    document.getElementById('timer').style.display = 'block'
+
 
     document.getElementById('player-input-box').addEventListener('input', () => {
         const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
@@ -174,7 +194,11 @@ function typingRoundOne() {
             }
         })
 
-        if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
+        if (correct && timer > 0) {
+            clearInterval(countdownInterval)
+            document.getElementById('timer').innerText = "10"
+            document.getElementById('timer-box').style.display = 'none'
+            document.getElementById('timer').style.display = 'none'
             document.getElementById('enemy-animation-display').style.animation = "cat-defeat 2.5s steps(25) normal";
             setTimeout(function () {
                 document.getElementById('player-input-box').style.display = 'none'
@@ -200,18 +224,19 @@ function typingRoundOne() {
                 document.getElementById('player-input-area').value = ''
                 document.getElementById('proceed-button').innerText = 'Continue'
                 document.getElementById('proceed-button').addEventListener('click', secondRoundPrelude)
+                document.getElementById('proceed-button').focus()
+
             }, 3000)
 
+        } else {
+            loseGame()
         }
     })
 
 }
 
-// function transition() {
-//     document.getElementById('enemy-animation-display').style.animation = 'skeleton-fight 0.4 steps(2) infinite'
-// }
-// document.getElementById('player-input-area').value = null
-// document.getElementById('prayer-display-box').innerHTML = ''
+timerElement.innerText="10"
+clearInterval(countdownInterval)
 
 function secondRoundPrelude() {
     document.getElementById('proceed-button').removeEventListener('click', secondRoundPrelude)
@@ -228,6 +253,8 @@ function secondRoundPreludeDialogue() {
     document.getElementById('fight-dialogue-box').style.display = 'block'
     document.getElementById('fight-dialogue').style.display = 'block'
     document.getElementById('proceed-button-box').style.display = 'block'
+    document.getElementById('proceed-button').focus()
+
     document.getElementById('proceed-button').textContent = 'Next...'
     document.getElementById('proceed-button').addEventListener('click', secondRoundPreludeDialogueTwo)
 }
@@ -236,44 +263,15 @@ function secondRoundPreludeDialogueTwo() {
     document.getElementById('proceed-button').removeEventListener('click', secondRoundPreludeDialogueTwo)
     document.getElementById('fight-dialogue').innerText = "I've always had a bone to pick with ya, ya bollix."
     document.getElementById('proceed-button').addEventListener('click', typingRoundTwo)
-    document.getElementById('player-input-area').focus()
 }
-
-
-
-// function firstRoundPrelude() {
-//     document.getElementById('proceed-button').removeEventListener('click', firstRoundPrelude)
-//     document.getElementById('enemy-animation-box').style.display = 'block'
-//     document.getElementById('fight-dialogue-box').style.display = 'block'
-//     document.getElementById('fight-dialogue').style.display = 'block'
-//     document.getElementById('proceed-button').textContent = 'Next...'
-//     document.getElementById('proceed-button').addEventListener('click', firstRoundPreludeDialogue)
-// }
-
-// function firstRoundPreludeDialogue() {
-//     document.getElementById('enemy-animation-display').style.animation = 'cat-fight 0.7s steps(7) infinite'
-//     document.getElementById('fight-dialogue').innerText = "Oh shit ! Fluffy's possessed!"
-//     document.getElementById('proceed-button').removeEventListener('click', firstRoundPreludeDialogue)
-//     document.getElementById('proceed-button').addEventListener('click', firstRoundPreludeDialogueTwo)
-// }
-
-// function firstRoundPreludeDialogueTwo() {
-//     document.getElementById('fight-dialogue').innerText = "I better put these rosary beads to use."
-//     document.getElementById('proceed-button').removeEventListener('click', firstRoundPreludeDialogueTwo)
-//     document.getElementById('proceed-button').addEventListener('click', typingRoundOne)
-//     document.getElementById('player-input-area').focus()
-
-// }
 
 function typingRoundTwo() {
     document.getElementById('proceed-button').removeEventListener('click', typingRoundTwo)
     document.getElementById('player-input-area').focus()
     document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
-
     document.getElementById('fight-dialogue').style.display = 'none'
     document.getElementById('proceed-button-box').style.display = 'none'
     document.getElementById('fight-dialogue-box').style.display = 'none'
-
     document.getElementById('prayer-display-box').style.display = 'block'
     document.getElementById('prayer-display-area').style.display = 'block'
     document.getElementById('player-input-box').style.display = 'block'
@@ -286,6 +284,18 @@ function typingRoundTwo() {
         characterSpan.innerText = character
         document.getElementById('prayer-display-box').appendChild(characterSpan)
     })
+
+    countdownInterval = setInterval(function () {
+        timer--;
+        timerElement.innerText = timer.toString(); // Convert timer to string for display
+
+        if (timer <= 0) {
+            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
+            loseGame();
+        }
+    }, 1000);
+    document.getElementById('timer-box').style.display = 'block'
+    document.getElementById('timer').style.display = 'block'
 
     document.getElementById('player-input-box').addEventListener('input', () => {
         const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
@@ -308,7 +318,11 @@ function typingRoundTwo() {
             }
         })
 
-        if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
+        if (correct && timer > 0) {
+            clearInterval(countdownInterval)
+            document.getElementById('timer').innerText = '10'
+            document.getElementById('timer-box').style.display = 'none'
+            document.getElementById('timer').style.display = 'none'
             document.getElementById('enemy-animation-display').style.animation = "";
             document.getElementById('enemy-animation-display').style.animation = "skeleton-defeat 2.2s steps(11) normal";
             setTimeout(function () {
@@ -334,10 +348,14 @@ function typingRoundTwo() {
                 document.getElementById('fight-dialogue').style.display = 'none'
                 document.getElementById('proceed-button-box').style.display = 'block'
                 document.getElementById('player-input-area').value = ''
+                document.getElementById('proceed-button').focus()
+
                 document.getElementById('proceed-button').innerText = 'Continue'
                 document.getElementById('proceed-button').addEventListener('click', thirdRoundPrelude)
             }, 3000)
 
+        } else {
+            loseGame()
         }
     })
 
@@ -358,6 +376,8 @@ function thirdRoundPreludeDialogue() {
     document.getElementById('fight-dialogue').style.display = 'block'
     document.getElementById('proceed-button-box').style.display = 'block'
     document.getElementById('proceed-button').textContent = 'Next...'
+    document.getElementById('proceed-button').focus()
+
     document.getElementById('proceed-button').addEventListener('click', thirdRoundPreludeDialogueTwo)
 }
 
@@ -367,12 +387,14 @@ function thirdRoundPreludeDialogueTwo() {
     document.getElementById('proceed-button').removeEventListener('click', thirdRoundPreludeDialogueTwo)
     document.getElementById('fight-dialogue').innerText = "Luckily, I'm class at being a priest."
     document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
+    document.getElementById('proceed-button').focus()
 
     document.getElementById('proceed-button').addEventListener('click', typingRoundThree)
 }
 
 function typingRoundThree() {
     document.getElementById('proceed-button').removeEventListener('click', typingRoundThree)
+    document.getElementById('player-input-area').focus()
 
     document.getElementById('fight-dialogue').style.display = 'none'
     document.getElementById('proceed-button-box').style.display = 'none'
@@ -391,6 +413,20 @@ function typingRoundThree() {
         characterSpan.innerText = character
         document.getElementById('prayer-display-box').appendChild(characterSpan)
     })
+
+    countdownInterval = setInterval(function () {
+        timer--;
+        timerElement.innerText = timer.toString(); // Convert timer to string for display
+
+        if (timer <= 0) {
+            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
+            loseGame();
+        }
+    }, 1000);
+
+    document.getElementById('timer-box').style.display = 'block'
+    document.getElementById('timer').style.display = 'block'
+
 
     document.getElementById('player-input-box').addEventListener('input', () => {
         const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
@@ -413,7 +449,11 @@ function typingRoundThree() {
             }
         })
 
-        if (correct) { //&& timer != 0) && prayerSelection=document.getElementById('player-input-area').innerText
+        if (correct && timer > 0) {
+            clearInterval(countdownInterval)
+            document.getElementById('timer').innerText = '10'
+            document.getElementById('timer-box').style.display = 'none'
+            document.getElementById('timer').style.display = 'none'
             document.getElementById('enemy-animation-display').style.animation = "girl-defeat 4.4s steps(22) normal";
             setTimeout(function () {
                 document.getElementById('player-input-box').style.display = 'none'
@@ -435,8 +475,12 @@ function typingRoundThree() {
                 document.getElementById('player-input-area').value = ''
                 document.getElementById('proceed-button').innerText = 'Continue'
                 document.getElementById('proceed-button').addEventListener('click', outroCinematic)
+                document.getElementById('proceed-button').focus()
+
             }, 3000)
 
+        } else {
+            loseGame()
         }
     })
 
@@ -455,20 +499,23 @@ function outroCinematic() {
     document.getElementById('outro-dialogue-box').style.display = 'block'
     document.getElementById('outro-dialogue').style.display = 'block'
     document.getElementById('outro-cinematic-display').style.display = 'block'
-    document.getElementById('outro-proceed-button-box').style.display = 'block'
     document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogue)
+    document.getElementById('outro-proceed-button').focus()
 }
 
 function outroCinematicDialogue() {
     document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogue)
     document.getElementById('outro-dialogue-box').innerText = 'Typical. He was always ignorant enough.'
     document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogueTwo)
+    document.getElementById('outro-proceed-button').focus()
+
 }
 
 function outroCinematicDialogueTwo() {
     document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogueTwo)
     document.getElementById('outro-dialogue-box').innerText = "No harm no foul anyway, I suppose."
     document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogueThree)
+    document.getElementById('outro-proceed-button').focus()
 
 }
 
@@ -476,6 +523,8 @@ function outroCinematicDialogueTwo() {
     document.getElementById('outro-proceed-button').removeEventListener('click', outroCinematicDialogueTwo)
     document.getElementById('outro-dialogue-box').innerText = "Definitely deserve a tea after all that."
     document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogueThree)
+    document.getElementById('outro-proceed-button').focus()
+
 
 }
 
@@ -487,17 +536,55 @@ function outroCinematicDialogueThree() {
 
 
     document.getElementById('outro-dialogue-box').innerText = "Definitely deserve a tea after all that."
-    document.getElementById('outro-proceed-button').innerText="Return to Main Menu"
+    document.getElementById('outro-proceed-button').innerText = "Return to Main Menu"
 
     document.getElementById('outro-dialogue-box').innerText = "The End."
     document.getElementById('outro-proceed-button').addEventListener('click', resetGame)
+    document.getElementById('outro-proceed-button').focus()
+
 
 }
 
-function resetGame(){
-            window.location.reload();
-      }
-      
+function resetGame() {
+    window.location.reload();
+}
+
+function runTimer() {
+    countdownInterval = setInterval(function () {
+        timer--;
+        timerElement.innerText = timer.toString(); // Convert timer to string for display
+
+        if (timer <= 0) {
+            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
+            console.log("Countdown finished!");
+        }
+    }, 1000);
+}
+
+function loseGame() {
+    document.getElementById('timer').style.display = 'flex'
+    document.getElementById('timer').style.flexDirection = 'column'
+
+    document.getElementById('prayer-display-box').style.display = 'none'
+    document.getElementById('prayer-display-area').style.display = 'none'
+    document.getElementById('player-input-box').style.display = 'none'
+    document.getElementById('player-input-area').style.display = 'none'
+    document.getElementById('enemy-animation-box').style.display = 'none'
+    document.getElementById('enemy-animation-display').style.display = 'none'
+
+    document.getElementById('timer').innerHTML = 'You lose! Try again'
+    let button = document.createElement('button')
+    button.innerText = 'Retry'
+    button.style.textAlign = 'center'
+    button.style.color = 'red'
+    document.getElementById('timer').appendChild(button)
+    document.getElementById('timer').addEventListener('click', () => {
+        resetGame()
+    })
+
+
+
+}
 
 // function resetGame() {
 //     let heading = document.getElementById("heading")

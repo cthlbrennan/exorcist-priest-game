@@ -348,6 +348,14 @@ footer a i {
     outline-color:#525561;
 }
 
+#proceed-button:focus {
+    outline-color: #525561;
+}
+
+#outro-proceed-button:focus {
+    outline-color: #525561;
+}
+
 .correct {
     color: green;
   }
@@ -432,12 +440,13 @@ footer a i {
     padding: 4px;
     max-width: 300px;
     align-self: center;
-    justify-content: flex-start;
+    justify-content: center;
     color: white;
     background-color: #9BADB7;
 }
 #outro-dialogue {
     display: none;
+    text-align: center;
 
 } 
 
@@ -473,6 +482,33 @@ footer a i {
         transform: translate3d(-100%, 0, 0)
     }
 }
+
+#timer-box {
+    display:none;
+}
+
+#timer {
+    display: none;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 200px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7;
+}
+
+#timer button {
+    display: block;
+    padding: 4px;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7;
+}
+
+
 
 #error-h2 {
     font-family: 'FS Underworld';
