@@ -263,6 +263,16 @@ footer a i {
     width: 11264px;
 }
 
+#error-box {
+    display: none;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 300px;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7;
+}
 #fight-dialogue-box {
     display: none;
     border: double 10px #525561;
@@ -533,4 +543,25 @@ footer a i {
     letter-spacing: 5px;
     max-width: 300px;
     margin-bottom: 1rem;
+}
+
+#error-box {
+    display: block;
+    border: double 10px #525561;
+    padding: 4px;
+    max-width: 300px;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    background-color: #9BADB7;
+}
+
+
+#error-box button a {
+  
+    font-family: 'Low Gothic';
+    text-decoration: none;
+    color: #525561;
+    background-color: #9BADB7;
+
 }
