@@ -79,7 +79,7 @@ main {
 
 }
 
-#dialogue-box  {
+#dialogue-box {
     display: none;
     border: double 10px #525561;
     padding: 4px;
@@ -95,7 +95,7 @@ main {
     display: none;
     z-index: 20;
 
-} 
+}
 
 #intro-animation-box {
     display: block;
@@ -253,13 +253,13 @@ footer a i {
     max-width: 256px;
     max-height: 256px;
     overflow: hidden;
-    
+
     margin: 1rem auto;
 }
 
 #enemy-animation-display {
     animation: cat-intro 0.4s steps(4) infinite;
-    
+
     width: 11264px;
 }
 
@@ -345,7 +345,7 @@ footer a i {
 }
 
 #player-input-area:focus {
-    outline-color:#525561;
+    outline-color: #525561;
 }
 
 #proceed-button:focus {
@@ -358,14 +358,14 @@ footer a i {
 
 .correct {
     color: green;
-  }
-  
-  .incorrect {
+}
+
+.incorrect {
     color: red;
     text-decoration: underline;
-  }
+}
 
-  @keyframes skeleton-intro {
+@keyframes skeleton-intro {
     from {
         transform: translate3d(0px, 0, 0)
     }
@@ -427,14 +427,14 @@ footer a i {
 
 #outro-cinematic-box {
     display: none;
-    width: 256px;
+    width: 350px;
     height: 500px;
     overflow: hidden;
     position: relative;
     margin: 1rem auto;
 }
 
-#outro-dialogue-box  {
+#outro-dialogue-box {
     display: none;
     border: double 10px #525561;
     padding: 4px;
@@ -444,11 +444,12 @@ footer a i {
     color: white;
     background-color: #9BADB7;
 }
+
 #outro-dialogue {
     display: none;
     text-align: center;
 
-} 
+}
 
 #outro-cinematic-display {
     image-rendering: pixelated;
@@ -457,7 +458,7 @@ footer a i {
 
 #outro-proceed-button-box {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-self: center;
     align-items: center;
     text-align: center;
@@ -485,7 +486,7 @@ footer a i {
 }
 
 #timer-box {
-    display:none;
+    display: none;
 }
 
 #timer {

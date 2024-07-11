@@ -72,7 +72,7 @@ function startGame() {
 
         setTimeout(function () {
             dialogueDisplay.innerText = 'It has been months since my sister Niamh has answered any of my letters.';
-        }, 1000);
+        }, 5000);
 
         setTimeout(function () {
             dialogueDisplay.innerText = "I am worried that something might've happened. She is still looking after that weird old man, our uncle Joe.";
@@ -84,11 +84,11 @@ function startGame() {
 
         setTimeout(function () {
             dialogueDisplay.innerText = "I'm sure she's just been busy...";
-        }, 20000);
+        }, 18000);
 
         setTimeout(function () {
             dialogueDisplay.innerText = "...";
-        }, 25000);
+        }, 20000);
 
         setTimeout(function () {
             introCinematicDisplay.style.animation = "driving-outro 1.4s steps(14) normal";
@@ -101,8 +101,8 @@ function startGame() {
                 document.getElementById('proceed-button').addEventListener('click', firstRoundPrelude)
                 document.getElementById('proceed-button').focus()
 
-            }, 1350)
-        }, 1000);
+            }, 1500)
+        }, 21500);
 
 
     })
@@ -159,18 +159,17 @@ function typingRoundOne() {
         characterSpan.innerText = character
         document.getElementById('prayer-display-box').appendChild(characterSpan)
     })
+    startCountdown();
 
-    countdownInterval = setInterval(function () {
-        timer--;
-        timerElement.innerText = timer.toString(); // Convert timer to string for display
+    // countdownInterval = setInterval(function () {
+    //     timer--;
+    //     timerElement.innerText = timer.toString(); // Convert timer to string for display
 
-        if (timer <= 0) {
-            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
-            loseGame();
-        } else {
-            
-        }
-    }, 1000);
+    //     if (timer <= 0) {
+    //         clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
+    //         loseGame();
+    //     } 
+    // }, 1000);
 
     document.getElementById('timer-box').style.display = 'block'
     document.getElementById('timer').style.display = 'block'
@@ -231,14 +230,15 @@ function typingRoundOne() {
 
             }, 3000)
 
-        } else {
-            loseGame()
-        }
+        } // else {
+        //     loseGame()
+        //     resetTimer()
+        // }
     })
 
 }
 
-timerElement.innerText="10"
+timerElement.innerText = "10"
 clearInterval(countdownInterval)
 
 function secondRoundPrelude() {
@@ -361,9 +361,9 @@ function typingRoundTwo() {
                 document.getElementById('proceed-button').addEventListener('click', thirdRoundPrelude)
             }, 3000)
 
-        } else {
-            loseGame()
-        }
+        } // else {
+        //     loseGame()
+        // }
     })
 
 }
@@ -402,10 +402,10 @@ function thirdRoundPreludeDialogueTwo() {
 function typingRoundThree() {
     document.getElementById('proceed-button').removeEventListener('click', typingRoundThree)
     document.getElementById('player-input-area').focus()
+    document.getElementById('fight-dialogue-box').style.display = 'none'
+    document.getElementById('proceed-button-box').style.display = 'none'
 
     document.getElementById('fight-dialogue').style.display = 'none'
-    document.getElementById('proceed-button-box').style.display = 'none'
-    document.getElementById('fight-dialogue-box').style.display = 'none'
     document.getElementById('prayer-display-box').innerHTML = '<p id="prayer-display-area"></p>'
 
     document.getElementById('prayer-display-box').style.display = 'block'
@@ -487,9 +487,9 @@ function typingRoundThree() {
 
             }, 3000)
 
-        } else {
-            loseGame()
-        }
+        } //else {
+           // loseGame()
+      //  }
     })
 
 }
@@ -509,9 +509,9 @@ function outroCinematic() {
     document.getElementById('outro-cinematic-display').style.display = 'block'
     document.getElementById('outro-proceed-button').addEventListener('click', outroCinematicDialogue)
     document.getElementById('outro-proceed-button').focus()
-    document.getElementById('outro-proceed-button-box').style.display='flex'
+    document.getElementById('outro-proceed-button-box').style.display = 'flex'
 
-    document.getElementById('outro-proceed-button').style.display='block'
+    document.getElementById('outro-proceed-button').style.display = 'block'
 }
 
 function outroCinematicDialogue() {
@@ -560,21 +560,11 @@ function resetGame() {
     window.location.reload();
 }
 
-function runTimer() {
-    countdownInterval = setInterval(function () {
-        timer--;
-        timerElement.innerText = timer.toString(); // Convert timer to string for display
 
-        if (timer <= 0) {
-            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
-            console.log("Countdown finished!");
-        }
-    }, 1000);
-}
 
 function loseGame() {
-    document.getElementById('timer').style.display = 'flex'
-    document.getElementById('timer').style.flexDirection = 'column'
+    // document.getElementById('timer').style.display = 'flex'
+    // document.getElementById('timer').style.flexDirection = 'column'
 
     document.getElementById('prayer-display-box').style.display = 'none'
     document.getElementById('prayer-display-area').style.display = 'none'
@@ -596,11 +586,13 @@ function loseGame() {
 
 
 }
+
 function resetTimer() {
     clearInterval(countdownInterval);
-    timer = 10;  // Reset the timer variable
+    timer = 10; // Reset the timer variable
     timerElement.innerText = "10";
 }
+
 function startCountdown() {
     resetTimer();
     countdownInterval = setInterval(function () {
