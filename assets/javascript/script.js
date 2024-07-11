@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 const gameLogicRound1 = () => {
     const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span')
     const allPlayerInputs = document.getElementById('player-input-area').value.split('')
