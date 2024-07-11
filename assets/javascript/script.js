@@ -287,19 +287,20 @@ function typingRoundTwo() {
         characterSpan.innerText = character
         document.getElementById('prayer-display-box').appendChild(characterSpan)
     })
+    startCountdown();
 
-    clearInterval(countdownInterval)
-    timerElement.innerText="10"
+    // clearInterval(countdownInterval)
+    // timerElement.innerText="10"
 
-    countdownInterval = setInterval(function () {
-        timer--;
-        timerElement.innerText = timer.toString(); // Convert timer to string for display
+    // countdownInterval = setInterval(function () {
+    //     timer--;
+    //     timerElement.innerText = timer.toString(); // Convert timer to string for display
 
-        if (timer <= 0) {
-            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
-            loseGame();
-        }
-    }, 1000);
+    //     if (timer <= 0) {
+    //         clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
+    //         loseGame();
+    //     }
+    // }, 1000);
     document.getElementById('timer-box').style.display = 'block'
     document.getElementById('timer').style.display = 'block'
 
@@ -419,16 +420,17 @@ function typingRoundThree() {
         characterSpan.innerText = character
         document.getElementById('prayer-display-box').appendChild(characterSpan)
     })
+    startCountdown();
 
-    countdownInterval = setInterval(function () {
-        timer--;
-        timerElement.innerText = timer.toString(); // Convert timer to string for display
+    // countdownInterval = setInterval(function () {
+    //     timer--;
+    //     timerElement.innerText = timer.toString(); // Convert timer to string for display
 
-        if (timer <= 0) {
-            clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
-            loseGame();
-        }
-    }, 1000);
+    //     if (timer <= 0) {
+    //         clearInterval(countdownInterval); // Stop the interval when the countdown reaches 0
+    //         loseGame();
+    //     }
+    // }, 1000);
 
     document.getElementById('timer-box').style.display = 'block'
     document.getElementById('timer').style.display = 'block'
@@ -594,7 +596,22 @@ function loseGame() {
 
 
 }
-
+function resetTimer() {
+    clearInterval(countdownInterval);
+    timer = 10;  // Reset the timer variable
+    timerElement.innerText = "10";
+}
+function startCountdown() {
+    resetTimer();
+    countdownInterval = setInterval(function () {
+        timer--;
+        timerElement.innerText = timer.toString();
+        if (timer <= 0) {
+            clearInterval(countdownInterval);
+            loseGame();
+        }
+    }, 1000);
+}
 // function resetGame() {
 //     let heading = document.getElementById("heading")
 //     heading.style.display = "flex"
