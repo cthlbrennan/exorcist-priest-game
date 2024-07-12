@@ -5,7 +5,7 @@
 
 ## Compatibility 
 
-The compatibility of all six pages of the website have been tested on different browsers including Google Chrome, Microsoft Edge and Mozilla Firefox. 
+The compatibility of both pages of the website have been tested on different browsers including Google Chrome, Microsoft Edge and Mozilla Firefox. 
 
 <details>
 <summary> Click here to see Compatibility with Google Chrome </summary>
@@ -27,46 +27,21 @@ The compatibility of all six pages of the website have been tested on different 
 ![Microsoft Edge](documentation/testing/compatibility/edge-compatibility.png)
 </details>
 
-It is evident that the website has compatibility with multiple browsers.
+It is evident that the website is compatible with multiple browsers.
 
 ## Responsiveness
 
 ### index.html 
 
-As can be seen below, index.html responds well when tested on different device sizes. At mobile screen-width, there is a hamburger icon/dropdown menu which works effectively. When the screen has the width of a tablet, the hamburger icon is no longer in view, and each of the menu options become visible within the navigation bar. The responsiveness of the About and Industry sections is evident, as is that of the testimonial section. The hero image also remains centered and covers the full width of the screen at any time. 
+As can be seen below, index.html responds well when tested on different device sizes. Given the precision needed to manage the many animation spritesheets and multiple keyframes, much of it through Javascript, the animation display areas do not adjust to responsiveness as this would have required an inordinate amount of work given the scope and scale of the project. However, as the spritesheet and keyframe animation for the opening game loop was simple, I was able to add in some responsive design for this element. 
 
-![index.html responsiveness](documentation/testing/responsiveness/index-responsiveness.gif)
-
-### services.html
-
-The hero image for the services.html page also remains centered and reacts as expected. The dropdown menu and nav bar also respond as expected, as per index.html. The six boxes of the services section are lined up in a column in mobile view, then in two columns of three at tablet width, then three columns of two for laptop and desktop. We can also see in the .gif below that the various elements of the footer, including the contact details, the logo, and the social media link icons expand and retract proportionate to the width of the screen, always filling the full width of the footer in a responsive and proportionate manner.  
-
-![services.html responsiveness](documentation/testing/responsiveness/services-responsiveness.gif)
-
-### contact.html
-
-This main section of this page is comprised of two main elements - the text inviting users to submit a query, and the form itself. At mobile and tablet width, these elements are stacked on one another in a column. At laptop and desktop width, they are aligned in a row, side-by-side. They respond proportionately to the width of the screen. 
-
-![contact.html responsiveness](documentation/testing/responsiveness/contact-responsiveness.gif)
-
-
-### submission.html
-
-This is a very simple page, with one small body of text comprising a heading and a paragraph. It remains centered within the page at every screen width, performing well in its role. 
-
-![submission.html responsiveness](documentation/testing/responsiveness/submission-responsiveness.gif)
-
-### easteregg.html
-
-Once again, a very simple page which can be seen below to respond well to different screen widths. 
-
-![easteregg.html responsiveness](documentation/testing/responsiveness/easter-egg-responsiveness.gif)
+![index.html responsiveness](documentation/testing/responsiveness/responsiveness.gif)
 
 ### 404.html
 
-Again, this is a very simple page which can be seen below to respond proportionately to different widths.  
+This is a very simple page which can be seen below to respond proportionately to different widths.  
 
-![404.html responsiveness](documentation/testing/responsiveness/error-responsiveness.gif)
+![404.html responsiveness](documentation/testing/responsiveness/responsiveness-error-page.gif)
 
 ## Manual Testing
 
@@ -74,33 +49,33 @@ Below, I provide the results of having manually tested each of the website's fea
 
 |Page Feature|Action(s)|Expected result|Tested|Passed/Failed|
 |-------|-------|------|------|-------------|
-Logo in Header/Nav Bar |Clicking on it |Go to index.html from any other page in the website|Yes|Pass|        |
-|Navigation Bar / Menu Options |Look at menu options |Currently viewed page is underlined (doesn’t include submission.html, 404.html or easteregg.html pages)|Yes|Pass|        
-|Navbar / Menu |Hover cursor on menu items on desktop |Item underlined when cursor hover over it, changes colour and background colour over 0.4 seconds |Yes   |Pass  |          
-|Navbar / Menu |Press hamburger menu at mobile and tablet screen widths   |Menu dropdown opens when clicked   |Yes   |Pass |            
-|Home menu option |Click it   |Clicking Home returns to home (index.html) page |Yes   |Pass  |            
+Logo |Checking to see if it's there |Go to index.html, it's on the opening land menu |Yes|Pass| 
+Intro animation loop |Checking to see if it's there |Go to index.html, see if the loop works |Yes|Pass|      |
+Logo |Checking to see if it's there |Go to index.html, it's on the opening land menu |Yes|Pass|
+|Navigation Bar / Menu Options |Look at menu options |It's present on the main menu|Yes|Pass|        
+|Start Button |Click it   |Starts intro animation and starts game |Yes   |Pass  |            
+|How to Play Button |Click it   |Brings up How to Play pop up box |Yes   |Pass  |            
 |Services menu option |Click it   |Clicking Services sends to services.html |Yes   |Pass  |           
-|Contact Us menu option |Click it   |Clicking Contact Us sends user to contact.html |Yes   |Pass  |            
-|Hero Image on index.html |Increasing screen width in DevTools|This photo remains centered and covers the width of the screen regardless of screen width   |Yes   |Pass  |           
-|Hero Image on services.html |Increasing screen width in DevTools|This photo remains centered and covers the width of the screen regardless of screen width  |Yes   |Pass  | 
-|Call-to-Action Button, About Section, index.html |Clicking on it|Sends user to Contact Us page, changes colour at desktop due to hover psuedoclass  |Yes   |Pass  | 
-|Call-to-Action Button, Industry Section, index.html |Clicking on it|Sends user to Services page, changes colour at desktop due to hover psuedoclass  |Yes   |Pass  | 
-|Call-to-Action Button, Services section, services.html |Clicking on it|Sends user to Contact Us page, changes colour at desktop due to hover psuedoclass  |Yes   |Pass  |
-|Testimonials Section, index.html |Change screen width|Responsive design  |Yes   |Pass  | 
-|Social Media links in Footer      |Click on icons   |Clicked link sends user to homepage of respective social media website in a new tab  |Yes   |Pass  |          
-|Alt-text    |Intentionally break file path of image on index.html  |Image will not appear due to a broken file path, but alt-text will display instead in its place|Yes   |Pass  |
+|Start Button |Click it   |Starts intro animation and starts game |Yes   |Pass  |            
+Return button under How to Play box |Click it   |Gets rid of pop up box and returns main menu layout |Yes   |Pass  |            
+|Social Media Icon Link |Click it|Opens a new tab linking to social media page   |Yes   |Pass  |           
+|404.html | Intentionally go to incorrectly spelt address i.e. https://cthlbrennan.github.io/exorcist-priest-game/index.htm, with the "l" missing at the end| This intentional mistake will lead user to 404.html  |Yes   |Pass         | 
+|404.html | Go to address which I know doesn't exist in file directory i.e. https://cthlbrennan.github.io/exorcist-priest-game/whoops.html| This intentional mistake will lead user to 404.html  |Yes   |Pass         | 
+|Return to Main Menu button on 404.html |Click it|Return to index.html main menu landing page|Yes   |Pass  | 
+Intro cinematic display |Check if this plays upon clicking start button on main menu |It plays |Yes|Pass|
+Enemy animation display |Play through the game and see if animations load in and out of this page throughout the three typing rounds due to Players winning/pressing the continue button when prompted |Animations load in and out as expected |Yes|Pass|
+Prayer Display Area |Play game | This feature appears and disappears as expected, the characters within the area turn green or red depending on player input, with different randomly selected prayers on different playthroughs |Yes|Pass|
+Player Input Area |Play game | This feature appears and disappears as expected, it allows for player input which interfaces with prayer display area as set out above |Yes|Pass|
+Continue/Next button |Play game | This feature allows for transition from intro cinematic sequence, to successive typing rounds, to outro cinematic sequence |Yes|Pass|
+Dialogue Boxes |Play game | Narration from player character appears and disappears as expected |Yes|Pass|
+Timer |Play game | Timer counts down from 10 for each round, timer resets to 10 after each round |Yes|Pass|
+Lose state |Play game | If timer during typing round gets to zero before player input area is correctly filled, the 'You lose ! Try Again' box appears with a 'Retry' button that leads back to main menu/landing page |Yes|Pass|
+Retry button for lose state |Play game | Clicking the 'Retry' button will lead back to main menu/landing page |Yes|Pass|
+Outro cinematic sequence |Play game | After finishing third round, the outro sequence plays as expected |Yes|Pass|
+Return to Main Menu button at end of outro cinematic sequence |Play game | This button shows up at the end of the closing sequence, clicking it leads back to main menu |Yes|Pass|
 |Favicon |Look at it  |It's on the browser tab for every page of the website  |Yes   |Pass         |         
-|Footer |Increase and decrease screen width  |Elements in footer grow and shrink proportionately  |Yes   |Pass         |       
-|Easter Egg Icon |Click on it  |Sends user to easteregg.html  |Yes   |Pass         |        
-|Audio clips, services.html  |Use controls   |The various controls (play, pause, scroll) will work  |Yes   |Pass |             
-|Contact Form, call-to-action button | Hover over it at desktop screen width|It will change colour over a period of 0.4 seconds  |Yes   |Pass         
-|Contact Form | Click "Get in Touch" call-to-action button without filling in "Name" field| Text will appear telling me to fill in required "Name" field  |Yes   |Pass         | 
-|Contact Form | Click "Get in Touch" call-to-action button without filling in "Email" field| Text will appear telling me to fill in required "Email" field  |Yes   |Pass         |  
-|Contact Form | Click "Get in Touch" call-to-action button without filling "Email" field with valid email address syntax| Text will appear telling me to fill "Email" field with a valid email address  |Yes   |Pass         | 
-|Contact Form | Click "Get in Touch" call-to-action button without clicking consent checkbox| Text will appear telling me to check the required checkbox before proceeding  |Yes   |Pass         | 
-|Contact Form | Click "Get in Touch" call-to-action button with all fields correctly filled in and checkbox ticked| User sent to submission.html |Yes   |Pass         | |submission.html | Fill out form on contact.html correctly to get to page| After five seconds, user sent to index.html automatically  |Yes   |Pass         | 
-|404.html | Intentionally go to incorrectly spelt address i.e. https://cthlbrennan.github.io/Baby-Jay-Productions/index.htm, with the "l" missing at the end| This intentional mistake will lead user to 404.html  |Yes   |Pass         | 
-|404.html | Go to address which I know doesn't exist in file directory i.e. https://cthlbrennan.github.io/Baby-Jay-Productions/whoops.html| This intentional mistake will lead user to 404.html  |Yes   |Pass         | 
+|Footer |Increase and decrease screen width  |Elements in footer grow and shrink proportionately  |Yes   |Pass         |        | 
+
 
 I am confident that the features of my website work correctly. 
 

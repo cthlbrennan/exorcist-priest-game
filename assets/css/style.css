@@ -520,6 +520,7 @@ footer a i {
 #error-display {
     align-self: center;
     margin-bottom: 1rem;
+    
 }
 
 #error-h3 {
@@ -543,7 +544,7 @@ footer a i {
 }
 
 
-#error-box button a {
+#error-button {
     font-family: 'Low Gothic';
     text-decoration: none;
     color: #525561;
@@ -568,5 +569,14 @@ animation is suitably larger */
         height: 512px;
         image-rendering: pixelated;
 
+    }
+
+    #error-display {
+        height: 150%;
+        width: 150%;
+        image-rendering: pixelated;
+        align-self: center;
+        margin-bottom: 1rem;
+        
     }
 }

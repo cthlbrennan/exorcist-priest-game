@@ -185,7 +185,7 @@ If the player completes all three rounds successfully, they will the closing seq
 - Increasing difficulty
   - The length of the phrases to be typed and the amount of available time will become more challenging as the levels progress. 
 - Larger RPG World
-  - Using a web library such as phaser.js or three.js, a top-down RPG style environment could be created in which the player character could freely move about. Typing rounds could be triggered in the same manner as turn-based battles in RPGs. 
+  - Using a web library such as phaser.js or three.js, a top-down RPG style environment could be created in which the player character could freely move about. Typing rounds could be triggered in the same manner as turn-based battles in RPG video games like Final Fantasy, Pokemon, etc. 
 - Improved Art
   - ... and more of it - more animations, more detail, more characters. 
 
@@ -272,7 +272,7 @@ To my knowledge, there is no difference between the local version on Gitpod and 
 | Created by Cathal Brennan on Aseprite | entire site | Pixel Art Images | All pixel assets |
 | [Font Awesome](https://fontawesome.com) | entire site | image | Social media link icons in footer |
 | [Leonardo Costa](https://fontstruct.com/fontstructions/show/1344429/gothic-pixel-font-1) | entire site | font | Gothic Pixel Font |
-| [Patrik Arts](https://patrik-arts.itch.io/pixel-font-low-gothic) | entire site | image | Low Gothic Font |
+| [Patrik Arts](https://patrik-arts.itch.io/pixel-font-low-gothic) | entire site | font | Low Gothic Font |
 
 
 ### Acknowledgements
