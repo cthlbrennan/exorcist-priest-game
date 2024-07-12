@@ -19,61 +19,84 @@
 <!--semantic elements included in body for SEO-->
 
 <body>
+    <!--name of the game at the top of the main game/landing screen-->
     <header id="heading">
         <h1>Exorcist Priest</h1>
     </header>
-
+    <!--the main element is the primary semantic element of the website. 
+    it is filled with buttons and boxes, each of which is made visible or invisible and changed 
+    throughout the game in order to show various lines of dialogue, animations, proceed buttons
+    as the story demands it-->
     <main>
         <div id="intro-animation-box">
-            <img id="intro-animation-display" src="assets/images/intro-animation-sheet.png">
+            <img id="intro-animation-display" src="assets/images/intro-animation-sheet.png"
+                alt="A cross which periodically gleams brightly">
         </div>
         <div id="intro-cinematic-box">
             <div id="dialogue-box">
+                <!--the initial line of dialogue for the intro cinematic. The innerText of this dialogue
+                element is changed through javascript over a serious of time intervals using setTimeout method functions-->
                 <p id="dialogue">After years of studying at seminaries across Europe, I'm finally on my way back
                     home to Kilross.</p>
             </div>
-            <img id="intro-cinematic-display" src="assets/images/driving-priest-intro-sheet.png">
+            <img id="intro-cinematic-display" src="assets/images/driving-priest-intro-sheet.png" alt="A spritesheet showing 
+            a priest walking through a tree-lined road in a red car at night time">
         </div>
+        <!--the timer played during each typing round-->
         <div id="timer-box">
-            <p id="timer">15</p>
+            <p id="timer">10</p>
         </div>
+        <!--shows enemy introduction, fight, and defeat animations during typing rounds-->
         <div id='enemy-animation-box'>
-            <img id="enemy-animation-display" src="assets/images/cat-sheet.png">
+            <img id="enemy-animation-display" src="assets/images/cat-sheet.png" alt="An image of a possessed black cat">
         </div>
+        <!--box which displays lines of dialogue spoken by the priest character in the preludes to the typing rounds-->
         <div id='fight-dialogue-box'>
             <p id="fight-dialogue">Finally home. Good to see the cat's doing well anyway.</p>
         </div>
+        <!--shows the randomly selected Latin prayer which the player must type within the time limit-->
         <div id='prayer-display-box'>
             <p id="prayer-display-area"></p>
         </div>
+        <!--where the player types. spellcheck is set to 'false' in order to avoid the appearance of red text
+        error lines that would otherwise appear under the characters typed by the player-->
         <div id="player-input-box">
             <textarea id="player-input-area" spellcheck="false"></textarea>
         </div>
+        <!--a button which appears to allow the player to click through dialogue at their own pace, and continue to other rounds-->
         <div id="proceed-button-box">
             <button id="proceed-button" type="button">Continue</button>
         </div>
+        <!--the outro sequence has its own div, with its own dialogue and image display box.-->
         <div id="outro-cinematic-box">
             <div id="outro-dialogue-box">
+                <!--the dialogue changes through javascript-->
                 <p id="outro-dialogue">Turns out uncle Joe had made some kind of deal with the devil that went south...
                 </p>
             </div>
-            <img id="outro-cinematic-display" src="assets/images/ending.png">
+            <img id="outro-cinematic-display" src="assets/images/ending.png" alt="The priest player character is with his sister and the cat, who have both returned to normal.">
             <div id="outro-proceed-button-box">
                 <button id="outro-proceed-button" type="button">Next...</div>
         </div>
         </div>
+        <!--this box appears on the main menu/landing page when the player selects the 'How to Play' button-->
         <div id="rules-box">
             <h2>How to Play</h2>
             <p>1. Type the prayers before the timer runs out in order to exorcise the demons.</p>
             <p>2. Every character of every Latin phrase must be typed accurately.</p>
             <p>3. If you fail to type out the prayer in time, you'll become a puppet of beelzebub - bad craic.</p>
         </div>
+        <!--a nav bar for the main menu/landing page, in consideration of SEO.-->
         <nav id="opening-menu-bar">
+            <!--in the javascript script, the buttons are assigned Event Listeners that trigger functions enabling 
+            their respective functionalities-->
             <button id="start-game" type="button">Start</button>
             <button id="rule-button" type="button">How to Play</button>
         </nav>
     </main>
+    <!--through flexbox, the footer remains fixed at the bottom of the webpage at all times-->
     <footer>
+        <!--a social media link is contained within the footer-->
         <a href="https://www.instagram.com/cthlbrennan/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </footer>
     <!--link to font awesome-->

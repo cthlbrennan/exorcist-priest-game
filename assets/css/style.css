@@ -1,11 +1,7 @@
+/* Two pixel-style fonts are used for this website */
 @font-face {
     font-family: 'Gothic Pixel';
     src: url(../fonts/gothic-pixel-font.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'FS Underworld';
-    src: url(../fonts/fs-underworld.ttf) format('truetype');
 }
 
 @font-face {
@@ -22,6 +18,7 @@
     font-family: 'Low Gothic';
 }
 
+/* Flex on the body is applied to all the elements below */
 body {
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +27,7 @@ body {
     background-color: #525561;
 }
 
+/* The keeps the name of the game, Exorcist Priest, centered at the top of the page on the 404 page and main menu */
 header {
     display: flex;
     flex-direction: row;
@@ -48,25 +46,7 @@ header h1 {
     text-align: center;
 }
 
-#audio-button {
-    position: absolute;
-    right: auto;
-    color: white;
-    background-color: #525561;
-}
-
-#audio-button button i {
-    color: white;
-    background-color: #525561;
-    border: none;
-    padding: 10px;
-
-}
-
-#audio-on {
-    display: none;
-}
-
+/* The flex options on the main element keeps the footer at the bottom of the webpage */
 main {
     flex-grow: 1;
     flex-shrink: 0;
@@ -76,9 +56,9 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
+/* This pertains to dialogue of the priest player character throughout the game */
 #dialogue-box {
     display: none;
     border: double 10px #525561;
@@ -95,6 +75,7 @@ main {
 
 }
 
+/* This styling applies to the gleaming cross on the main menu */
 #intro-animation-box {
     display: block;
     max-width: 256px;
@@ -104,11 +85,14 @@ main {
     margin: 1rem auto;
 }
 
+/* overall width of cross spritesheet, and animation styling which features the 'intro-spritesheet' keyframe */
 #intro-animation-display {
     animation: intro-spritesheet 3s steps(30) infinite;
     width: 7680px;
 }
 
+/* sprite sheet starts at the start, and moves it to the right in 30 equal steps over three seconds, as per the animation
+property set out above */
 @keyframes intro-spritesheet {
     from {
         transform: translate3d(0px, 0, 0)
@@ -119,6 +103,7 @@ main {
     }
 }
 
+/* pertains to box that pops up upon pressing How to Play button on main menu */
 #rules-box {
     display: none;
     flex-direction: column;
@@ -143,6 +128,7 @@ main {
     padding: 5px;
 }
 
+/* pertains to nav element at bottom of main menu */
 nav {
     align-items: center;
     align-self: center;
@@ -155,9 +141,7 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     max-width: 400px;
-
     background-color: #525561;
-
 }
 
 #opening-menu-bar button {
@@ -174,10 +158,12 @@ footer {
     background-color: #9BADB7;
 }
 
+/* social media link icon  */
 footer a i {
     color: black;
 }
 
+/* div container for intro animation sequence */
 #intro-cinematic-box {
     display: none;
     width: 256px;
@@ -188,11 +174,11 @@ footer a i {
     margin: 1rem auto;
 }
 
+/* img containing animated spritesheet */
 #intro-cinematic-display {
     animation: intro-driving-spritesheet 5.3s steps(53) normal;
     width: 17152px;
     image-rendering: pixelated;
-
 }
 
 @keyframes intro-driving-spritesheet {
@@ -205,6 +191,7 @@ footer a i {
     }
 }
 
+/* keyframe for intro animation is changed by script.js */
 @keyframes main-driving {
     from {
         transform: translate3d(-8704px, 0, 0)
@@ -225,6 +212,7 @@ footer a i {
     }
 }
 
+/* div container for proceed button */
 #proceed-button-box {
     display: none;
     justify-content: center;
@@ -243,33 +231,22 @@ footer a i {
     background-color: #9BADB7
 }
 
-
+/* div container for enemy animation spritesheets and animations */
 #enemy-animation-box {
     display: none;
     background-color: red;
     max-width: 256px;
     max-height: 256px;
     overflow: hidden;
-
     margin: 1rem auto;
 }
 
 #enemy-animation-display {
     animation: cat-intro 0.4s steps(4) infinite;
-
     width: 11264px;
 }
 
-#error-box {
-    display: none;
-    border: double 10px #525561;
-    padding: 4px;
-    max-width: 300px;
-    align-self: center;
-    justify-content: center;
-    color: white;
-    background-color: #9BADB7;
-}
+/* styling for div container that holds dialogue that occurs during typing rounds */
 #fight-dialogue-box {
     display: none;
     border: double 10px #525561;
@@ -285,6 +262,7 @@ footer a i {
     display: none;
 }
 
+/* keyframes for first typing round */
 @keyframes cat-intro {
     from {
         transform: translate3d(-1536px, 0, 0)
@@ -315,6 +293,7 @@ footer a i {
     }
 }
 
+/* div container for area where prayers to be typed are displayed */
 #prayer-display-box {
     display: none;
     border: double 10px #525561;
@@ -331,6 +310,7 @@ footer a i {
     display: none;
 }
 
+/* div container that holds player typing input area */
 #player-input-box {
     display: none;
     border: double 10px #525561;
@@ -351,27 +331,33 @@ footer a i {
     background-color: white;
 }
 
+/* replaces the default red/orange focus outline in line with overal colour scheme of the website*/
 #player-input-area:focus {
     outline-color: #525561;
 }
 
+/* replaces the default red/orange focus outline in line with overal colour scheme of the website*/
 #proceed-button:focus {
     outline-color: #525561;
 }
 
+/* replaces the default red/orange focus outline in line with overal colour scheme of the website*/
 #outro-proceed-button:focus {
     outline-color: #525561;
 }
 
+/* spans within the prayer display area will be assigned the .correct class if the player has correctly typed in the player input area */
 .correct {
     color: green;
 }
 
+/* spans within the prayer display area will be assigned the .incorrect class if the player has incorrectly typed in the player input area */
 .incorrect {
     color: red;
     text-decoration: underline;
 }
 
+/* keyframes for typing round two */
 @keyframes skeleton-intro {
     from {
         transform: translate3d(0px, 0, 0)
@@ -402,6 +388,7 @@ footer a i {
     }
 }
 
+/* keyframes for third typing round */
 @keyframes girl-intro {
     from {
         transform: translate3d(0px, 0, 0)
@@ -432,6 +419,7 @@ footer a i {
     }
 }
 
+/* div container for outro spritesheet, dialogue and animations */
 #outro-cinematic-box {
     display: none;
     width: 350px;
@@ -454,12 +442,10 @@ footer a i {
 #outro-dialogue {
     display: none;
     text-align: center;
-
 }
 
 #outro-cinematic-display {
     image-rendering: pixelated;
-
 }
 
 #outro-proceed-button-box {
@@ -481,6 +467,7 @@ footer a i {
     background-color: #9BADB7
 }
 
+/* keyframe for final outro animation */
 @keyframes tea-ending {
     from {
         transform: translate3d(0px, 0, 0)
@@ -491,6 +478,7 @@ footer a i {
     }
 }
 
+/* div container for timer element */
 #timer-box {
     display: none;
 }
@@ -517,9 +505,9 @@ footer a i {
 }
 
 
-
+/* styling for elements on 404 error page */
 #error-h2 {
-    font-family: 'FS Underworld';
+    font-family: 'Low Gothic';
     text-align: center;
     color: white;
     letter-spacing: 5px;
@@ -554,30 +542,29 @@ footer a i {
 
 
 #error-box button a {
-  
     font-family: 'Low Gothic';
     text-decoration: none;
     color: #525561;
     background-color: #9BADB7;
-
 }
 
-
+/*Responsive design styling below - on larger screens, the landing page/main menu 
+animation is suitably larger */
 @media screen and (min-width: 768px) {
 
-#intro-animation-box {
-    max-width: 512px;
-    max-height: 512px;
-    display: block;
-    overflow: hidden;
-    position: relative;
-    margin: 1rem auto;
-}
+    #intro-animation-box {
+        max-width: 512px;
+        max-height: 512px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        margin: 1rem auto;
+    }
 
-#intro-animation-display {
-    width: 15360px;
-    height: 512px;
-    image-rendering: pixelated;
+    #intro-animation-display {
+        width: 15360px;
+        height: 512px;
+        image-rendering: pixelated;
 
-}
+    }
 }
