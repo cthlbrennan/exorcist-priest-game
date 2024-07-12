@@ -20,7 +20,7 @@ const gameLogicRound1 = () => {
     all.*/
     let correct = true;
     allPrayerSpans.forEach((characterSpan, index) => {
-        const character = allPlayerInputs[index]
+        const character = allPlayerInputs[index];
         if (character == null) {
             characterSpan.classList.remove('correct');
             characterSpan.classList.remove('incorrect');
@@ -33,7 +33,7 @@ const gameLogicRound1 = () => {
             characterSpan.classList.add('incorrect');
             correct = false;
         }
-    })
+    });
     /*this if condition ensures that the player must fill in the input box correctly within the time limit in order to win.*/
     if (correct && timer > 0) {
         clearInterval(countdownInterval);
@@ -52,7 +52,7 @@ const gameLogicRound1 = () => {
             document.getElementById('fight-dialogue').innerText = "Good cat...";
             document.getElementById('prayer-display-box').style.display = 'none';
             document.getElementById('prayer-display-area').style.display = 'none';
-        }, 10)
+        }, 10);
         setTimeout(function () {
             document.getElementById('enemy-animation-box').style.display = 'none';
             document.getElementById('enemy-animation-display').style.display = 'none';
@@ -67,9 +67,9 @@ const gameLogicRound1 = () => {
             document.getElementById('proceed-button').innerText = 'Continue';
             document.getElementById('proceed-button').addEventListener('click', secondRoundPrelude);
             document.getElementById('proceed-button').focus();
-        }, 3000)
+        }, 3000);
     }
-}
+};
 
 /* Again, this is the same as the previous round, except that the last lines of code prescribe different keyframes and sources
 for Round Three's animations, dialogue, etc.*/
@@ -78,7 +78,7 @@ const gameLogicRound2 = () => {
     const allPlayerInputs = document.getElementById('player-input-area').value.split('');
     let correct = true;
     allPrayerSpans.forEach((characterSpan, index) => {
-        const character = allPlayerInputs[index]
+        const character = allPlayerInputs[index];
         if (character == null) {
             characterSpan.classList.remove('correct');
             characterSpan.classList.remove('incorrect');
@@ -91,7 +91,7 @@ const gameLogicRound2 = () => {
             characterSpan.classList.add('incorrect');
             correct = false;
         }
-    })
+    });
     if (correct && timer > 0) {
         clearInterval(countdownInterval);
         document.getElementById('timer').innerText = '10';
@@ -107,7 +107,7 @@ const gameLogicRound2 = () => {
             document.getElementById('fight-dialogue').innerText = "Good riddance...";
             document.getElementById('prayer-display-box').style.display = 'none';
             document.getElementById('prayer-display-area').style.display = 'none';
-        }, 10)
+        }, 10);
         setTimeout(function () {
             document.getElementById('enemy-animation-box').style.display = 'none';
             document.getElementById('enemy-animation-display').style.display = 'none';
@@ -123,9 +123,9 @@ const gameLogicRound2 = () => {
             document.getElementById('proceed-button').focus();
             document.getElementById('proceed-button').innerText = 'Continue';
             document.getElementById('proceed-button').addEventListener('click', thirdRoundPrelude);
-        }, 3000)
+        }, 3000);
     }
-}
+};
 
 const gameLogicRound3 = () => {
     const allPrayerSpans = document.getElementById('prayer-display-box').querySelectorAll('span');
@@ -133,7 +133,7 @@ const gameLogicRound3 = () => {
 
     let correct = true;
     allPrayerSpans.forEach((characterSpan, index) => {
-        const character = allPlayerInputs[index]
+        const character = allPlayerInputs[index];
         if (character == null) {
             characterSpan.classList.remove('correct');
             characterSpan.classList.remove('incorrect');
@@ -146,7 +146,7 @@ const gameLogicRound3 = () => {
             characterSpan.classList.add('incorrect');
             correct = false;
         }
-    })
+    });
     if (correct && timer > 0) {
         clearInterval(countdownInterval);
         document.getElementById('timer').innerText = '10';
@@ -161,7 +161,7 @@ const gameLogicRound3 = () => {
             document.getElementById('fight-dialogue').innerText = "Phew...";
             document.getElementById('prayer-display-box').style.display = 'none';
             document.getElementById('prayer-display-area').style.display = 'none';
-        }, 10)
+        }, 10);
         setTimeout(function () {
             document.getElementById('enemy-animation-box').style.display = 'none';
             document.getElementById('enemy-animation-display').style.display = 'none';
@@ -173,9 +173,9 @@ const gameLogicRound3 = () => {
             document.getElementById('proceed-button').innerText = 'Continue';
             document.getElementById('proceed-button').addEventListener('click', outroCinematic);
             document.getElementById('proceed-button').focus();
-        }, 3000)
+        }, 3000);
     }
-}
+};
 
 /*This array contains twenty latin phrases generated by ChatGPT that would be typical of popular culture's representation
 of exorcist prayers. I asked ChatGPT for lines similar to the famous 'the body of Christ compels you' from The Exorcist
@@ -202,7 +202,7 @@ const prayerArray = [
     "Sancte Michael Archangele, defende nos in proelio!",
     "Renuntia Satanae et omnibus operibus eius!",
     "In fide Iesu Christi, te exorcizo!",
-]
+];
 //a global variable which is assigned the location of the 'timer' element on the DOM 
 var timerElement = document.getElementById('timer');
 //the string content of the timer element converted to an integer
@@ -279,9 +279,9 @@ function startGame() {
                 document.getElementById('proceed-button-box').style.display = 'block';
                 document.getElementById('proceed-button').addEventListener('click', firstRoundPrelude);
                 document.getElementById('proceed-button').focus();
-            }, 1500)
+            }, 1500);
         }, 21500);
-    })
+    });
 }
 
 /*one prelude function activates another through a sequence of Event Listeners being added and removed from the proceed button. This allows
@@ -329,7 +329,7 @@ function typingRoundOne() {
         const characterSpan = document.createElement('span');
         characterSpan.innerText = character;
         document.getElementById('prayer-display-box').appendChild(characterSpan);
-    })
+    });
     startCountdown();
     document.getElementById('timer-box').style.display = 'block';
     document.getElementById('timer').style.display = 'block';
@@ -380,7 +380,7 @@ function typingRoundTwo() {
         const characterSpan = document.createElement('span');
         characterSpan.innerText = character;
         document.getElementById('prayer-display-box').appendChild(characterSpan);
-    })
+    });
     startCountdown();
     document.getElementById('timer-box').style.display = 'block';
     document.getElementById('timer').style.display = 'block';
@@ -433,7 +433,7 @@ function typingRoundThree() {
         const characterSpan = document.createElement('span');
         characterSpan.innerText = character;
         document.getElementById('prayer-display-box').appendChild(characterSpan);
-    })
+    });
     startCountdown();
     document.getElementById('timer-box').style.display = 'block';
     document.getElementById('timer').style.display = 'block';
@@ -522,7 +522,7 @@ function loseGame() {
     document.getElementById('timer').appendChild(button);
     document.getElementById('timer').addEventListener('click', () => {
         resetGame();
-    })
+    });
 }
 
 //only ever called as part of the startCountdown function

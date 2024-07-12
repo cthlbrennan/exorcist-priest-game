@@ -87,43 +87,27 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | File | Screenshot | 
 | --- | --- |
-| 404.html | ![screenshot](documentation/validation/html-validation/error-validation.png) |
-| contact.html | ![screenshot](documentation/validation/html-validation/contact-validation.png) |
-| easteregg.html | ![screenshot](documentation/validation/html-validation/easteregg-validation.png) |
-| index.html | ![screenshot](documentation/validation/html-validation/index-validation.png) |
-| services.html | ![screenshot](documentation/validation/html-validation/services-validation.png) |
-| submission.html | ![screenshot](documentation/validation/html-validation/submission-validation.png) |
+| 404.html | ![screenshot](documentation/validation/html-validation/error-page-html-validation.png) |
+| index.html | ![screenshot](documentation/validation/html-validation/index-page-html-validation.png) |
+
 
 ### CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file.
 
-Initially, I had two errors with my CSS Validation. 
-
-![CSS Errors](documentation/validation/css-validation/css-errors.png)
-
-One error related to a missing comma between "Fira Mono" and "sans-serif" in a rule on line 269.
-
-![First Error](documentation/validation/css-validation/css-errors-1.png)
-
-This was the fix:
-
-![First Fix](documentation/validation/css-validation/css-errors-2.png)
-
-The second error related to the wrong use of "align-items:left" for a rule on line 724.
-
-![Second Error](documentation/validation/css-validation/css-errors-3.png)
-
-The fix was just to remove this line altogether, which had no effect on the styling of the relevant element in contact.html:
-
-![Second Fix](documentation/validation/css-validation/css-errors-4.png)
-
-As can be seen below, my CSS file was subsequently validated with no errors.
+As can be seen below, my CSS file was validated with no errors.
 
 | File | Screenshot |
 | --- | --- |
 | style.css | ![screenshot](documentation/validation/css-validation/css-validation.png) | |
 
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all my JS file.
+
+| File | Screenshot|
+| --- | --- |
+ script.js | ![screenshot](documentation/validation/javascript-validation/javascript-validation.png)
 
 
 ## Lighthouse Audit
