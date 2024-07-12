@@ -116,25 +116,19 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/mobile/index-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/index-lighthouse-desktop.png) | Minor warnings for performance on mobile and desktop |
-| Services | ![screenshot](documentation/lighthouse/mobile/services-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/services-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop |
-| Contact Us | ![screenshot](documentation/lighthouse/mobile/contact-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/contact-lightouse-desktop.png) | Good performance on mobile and desktop |
-| Submission | ![screenshot](documentation/lighthouse/mobile/submission-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/submission-lighthouse-desktop.png) | Good performance on mobile and desktop |
-| Easter Egg | ![screenshot](documentation/lighthouse/mobile/easteregg-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/easteregg-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop |
-| 404 | ![screenshot](documentation/lighthouse/mobile/error-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/error-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop|
+| Index | ![screenshot](documentation/lighthouse/mobile/lighthouse-index-mobile.png) | ![screenshot](documentation/lighthouse/desktop/lighthouse-index-desktop.png) | Good performance on mobile and desktop |
+| 404 | ![screenshot](documentation/lighthouse/mobile/lighthouse-error-page-mobile.png) | ![screenshot](documentation/lighthouse/desktop/lighthouse-error-page-desktop.png) | A minor warning for accessibility on mobile and desktop |
 
 ## User Story Testing
 
 | User Story | Screenshot |
 | --- | --- |
-| As a new site user, I would like to know the purpose of the website, so that I can discern whether or not it is relevant to me. | ![screenshot](documentation/features/hero-image-index.png) |
-| As a new site user, I would like the website to be easily navigible, so that I can easily find the information that I may need. | ![screenshot](documentation/features/navbar.png) |
-| As a new site user, I would like to easily return to the home page by clicking the logo in the header, so that I can easily orient myself within the website. | ![screenshot](documentation/features/baby-jay-productions-logo.png) |
-| As a new site user, I would like the website to have good SEO scores and semantic elements so that I can easily find it through a search engine.| ![screenshot](documentation/lighthouse/desktop/index-lighthouse-desktop.png) |
+| As a new site user, I would like to know the purpose of the website. | ![screenshot](documentation/features/index-landing-menu.png)|
+| As a new site user, I would like the website to be easily navigable. | ![screenshot](documentation/features/nav-bar.png) |
+| As a new site user, I would like the website to have good SEO scores and semantic elements so that I can easily find it through a search engine.| ![screenshot](documentation/lighthouse/desktop/lighthouse-index-desktop.png) |
 | As a new site user, I would like to be assured that the interactive elements of the website work, so that I may have a positive experience that wouldn't result in frustration. | ![screenshot](documentation/validation/html-validation/index-validation.png) ![screenshot](documentation/validation/css-validation/css-validation.png)|
-| As a returning site user, I would like to know where I can find further information on the business, such as their social media presence. | ![screenshot](documentation/features/social-media-links.png) |
-| As a returning site user, I would like to know how to contact the business directly for commercial queries. | ![screenshot](documentation/features/contact-form.png) |
-| As a frequent site user, I would like the website to be responsive to different screen widths, so that I can easily view it on a variety of devices. | ![screenshot](documentation/testing/responsiveness/index-responsiveness.gif)|
+| As a returning site user, I would like to know where I can find further information on the business, such as their social media presence. | ![screenshot](documentation/features/social-media-link.png) |
+
 
 ## Bugs
 
