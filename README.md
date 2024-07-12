@@ -6,70 +6,53 @@
 
 ## Introduction
 
-Baby Jay Productions is a website designed to promote the services of a professional audio production company of the same name run by Siobhan Brosnan, a professional in the radio broadcasting and podcasting industry based in Co. Kerry, Ireland. The objective of the website is to clearly communicate the breadth and depth of Siobhan's technical and creative services to brands, companies and individuals looking to set up their own podcasts.  From reading the website, users will understand and appreciate the value that Siobhan could bring to their business or creative venture, thereby providing Siobhan with new clients. The website presents information in a vibrant and professional manner that is reflective of Siobhan's approach to her work. 
+Exorcist Priest is a narrative-focused speed typing game which features custom 'hand-pixeled' art and animations designed by Cathal Brennan. The website follows a priest returning home to find his family in various states of demonic possession. Assuming the role of the priest player character, the player must type Latin exorcism prayers before a timer runs out in order to get to get to the next round and continue to the end of the story. The objective of the website is to provide users with an interactive, challenging and humourous experience. Users will appreciate the art work, dialogue and humour of the story, as well as the challenge of typing one of multiple randomly selected Latin phrases under pressure.  
 
-![Responsive designs](documentation/introduction/am-i-responsive-screenshot.png)
+![Responsive designs](documentation/introduction/am-i-responsive.gif)
 
 ## UX
 
-The primary goal was to create a vibrant, professional website that would provide prospective clients with a thorough and concise overview of Siobhan's skills as a technical and creative consultant in the audio and podcasting industry.
+The primary goal was to create a short, vibrant and engaging interactive experience reminiscent of arcade cabinet video games, but recast with contemporary speed typing game mechanics. The game is inspired by Faith: The Unholy Trinity, as well as The Typing of the Dead. 
 
 ### Colour Scheme
 
-From the outset, I understood that I wanted some bright colours to reflect Siobhan's creativity. However, it was important that the colours would appear suitably muted so as to simultaneously get her professionalism across to the site user, who would be likely to be a prospective client. As such, using the coolors.co website, I initially selected a palette of five bright pastel colours to be used alongside black (#000000) and white (#FFFFFF).
+It was important that the selected colours would complement the spooky aesthetic of the game without distracting from the pixel art animations which would form the primary visual stimuli of the website. To this end, and using the coolors.co website, I chose a pair of analogous cool greys that, in addition to black (#000000) and white (#FFFFFF), would provide an unobtrusive backdrop. 
 
-![Initial colour palette](documentation/ux/initial-colour-palette.png)
-
-However, after using the Colour Contrast Checker tool on audioeye.com, it was clear to me that the use of lilac (#B594B6) and thistle (#C8B8DB) would be unsuitable, as white (#FFFFFF) text upon these background colours would not meet the minimum score of 4.5 as per the Web Content Accessibility Guidelines (WCAG) 2.1.
-
-![#B594B6 Accessibility Score](documentation/ux/audioeye-1.png)
-
-![#C8B8DB Accessibility Score](documentation/ux/audioeye-2.png)
-
-As such, I removed these two colours from my palette and added a dark pine green that would contrast positively with the rest of the palette. This was confirmed to be acceptable in terms of the WCAG 2.1 as shown below:
-
-![#007360 Accessibility Score](documentation/ux/audioeye-3.png)
-
-With this change, my colour palette was finalised.  
-
-![Finalised colour palette](documentation/ux/finalised-colour-palette.png)
+![Initial colour palette](documentation/ux/colour-palette.png)
 
 ### Typography
 
-I used the fontjoy.com website to find three free Google Fonts that I found to be complementary. 
+In keeping with the retro gaming aesthetic of the website, I chose two fonts that are stylised in pixel art styles. 
 
-![Selected fonts](documentation/ux/fontjoy.png)
+The font used for the banner logo is a free font by Leonardo Costa called [Gothic Pixel Font](https://fontstruct.com/fontstructions/show/1344429/gothic-pixel-font-1).
 
-The three fonts selected - Fira Mono, Cousine, and Roboto Mono - are all sans-serif and so are well-suited in terms of their accessibility for screen reading. [Fira Mono](https://fonts.google.com/specimen/Fira+Mono) was used for the logo font; [Cousine](https://fonts.google.com/specimen/Cousine) was used for all sub-headings, while [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) was used for paragraphs. Both Cousine and Roboto Mono share a similar, typewriter-style aesthetic that contrasts positively with the thick bold lines of Fira Mono.  
+![Gothic Pixel Font](documentation/ux/gothic-pixel-font.png)
 
-[Font Awesome](https://fontawesome.com) icons were also used throughout the site, such as the social media icons in the footer and above the sub-headings on the Services page.
+The font used for the rest of the text on the website is another free font by Patrik Arts called [Low Gothic](https://patrik-arts.itch.io/pixel-font-low-gothic).
 
+![Low Gothic Font](documentation/ux/low-gothic-font.png)
+
+A [Font Awesome](https://fontawesome.com) icon was also used for the social media icon in the webpage footers.
 
 ## User Stories
 
 ### New Site Users
 
-- As a new site user, I would like to know the purpose of the website, so that I can discern whether or not it is relevant to me.
-- As a new site user, I would like the website to be easily navigable, so that I can easily find the information that I may need.
-- As a new site user, I would like to easily return to the home page by clicking the logo in the header, so that I can easily orient myself within the website. 
+- As a new site user, I would like to know the purpose of the website.
+- As a new site user, I would like the website to be easily navigable.
 - As a new site user, I would like the website to have good SEO scores and semantic elements so that I can easily find it through a search engine.
-- As a new site user, I would like to be assured that the interactive elements of the website work, so that I may have a positive experience that wouldn't result in frustration. 
+- As a new site user, I would like to be assured that the interactive elements of the website work are functional.
 
 
 ### Returning Site Users
 
 - As a returning site user, I would like to know where I can find further information on the business, such as their social media presence. 
-- As a returning site user, I would like to know how to contact the business directly for commercial queries.
-
-### Frequent Site Users
-
-- As a frequent site user, I would like the website to be responsive to different screen widths, so that I can easily view it on a variety of devices.
 
 
 ## Wireframes
 
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
-I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+I used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 ### Mobile Wireframes
 
@@ -105,9 +88,9 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 #### Logo
 
-![Logo](documentation/features/baby-jay-productions-logo.png)
+![Logo](documentation/features/logo.png)
 
-Upon entering the page, the logo is apparent in the top left corner, or the very top of the page if viewed on a mobile screen. This tells the user what website they are on. It is also clickable, allowing users to navigate easily and directly back to the home page from any other page. 
+Upon arriving on the main menu, the logo is apparent at the top of the screen. This tells the user what website they are on. 
 
 #### Navigation Bar
 
@@ -356,4 +339,3 @@ To my knowledge, there is no difference between the local version on Gitpod and 
 
 Thanks to Tim Nelson for his help and guidance. 
 Thanks to Marko Tot for same. 
-Thanks to Siobhan for allowing me to make her a website for free. 
