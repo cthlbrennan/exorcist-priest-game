@@ -1,4 +1,4 @@
-![Logo](documentation/introduction/baby-jay-productions-logo.png)
+![Logo](documentation/introduction/logo.png)
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/cthlbrennan/exorcist-priest-game)](https://github.com/cthlbrennan/exorcist-priest-game/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/cthlbrennan/exorcist-priest-game)](https://github.com/cthlbrennan/exorcist-priest-game/commits/main)
