@@ -132,125 +132,101 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Bugs
 
-### 1 - Menu Options Misaligned with Logo
-![screenshot](documentation/bugs/bug-1-before.png)
+### 1 - Animation Loop not appearing on main menu
+![screenshot](documentation/bugs/bug-one/bug-one-screenshot-one.png)
 
-To fix this, I reviewed the Code Institute's tutorials on flexbox. I realised that I had not properly understood the justify-content property, and thought that I had to apply "display:flex" to elements that were to be flexed, not just the container in which things would be flexed. Shortly after, the navbar looked like this:
+Upon landing on the main menu, the cross animation wasn't visible, even though the keyframe, animation style property, and file path were all apparently correct. 
 
-![screenshot](documentation/bugs/bug-1-after.png)
+![screenshot](documentation/bugs/bug-one/bug-one-screenshot-two.png)
 
-While this wasn't yet the final version of the navbar, it represented a better example of flexbox and I slowly became more comfortable with using flexbox afterwards. 
+However, after some time, I realised that the animation shorthand property actually was incorrect - instead of saying '0.1s' as required, I needed to say '1.0s' - this value can't just be a floating point, there needs to be a number before the floating point for the property to work properly.
+![screenshot](documentation/bugs/bug-one/bug-one-screenshot-three.png)
+
+This was later changed to 3s, as the animation was much too fast at 0.1s. 
+
 
 ### 2 - Horizontal Overflow
 
-Horizontal overflow is something which I myself find annoying when I come across it online. 
+There was vertical overflow on the main landing page. 
 
-![screenshot](documentation/bugs/bug-2-before.png)
+![screenshot](documentation/bugs/bug-two/bug-two-screenshot-one.png)
+![screenshot](documentation/bugs/bug-two/bug-two-screenshot-two.png)
 
-After examining the max-width properties within rules applied to the body element below, the overflow was removed. 
+After examining the main element styling rule, I realised I had set display:block instead of display:flex. 
 
-![screenshot](documentation/bugs/bug-2-after.png)
+![screenshot](documentation/bugs/bug-two/bug-two-screenshot-three.png)
 
-### 3 - Anchor Element not Justified
+Once this was corrected, the footer appeared at the bottom of the viewport, removing vertical overflow issues.
 
-The call-to-action button (unstyled here in an earlier version) was aligned to the left-hand side of the screen. 
+![screenshot](documentation/bugs/bug-two/bug-two-screenshot-four.png)
 
-![screenshot](documentation/bugs/bug-3-before.png)
+### 3 - Intro sequence/game not starting after clicking start button
 
-I eventually realised that I had targeted this anchor element incorrectly. After refactoring my code, the anchor element became centered. 
+Upon clicking the start button, a blank screen with no elements would appear.
 
-![screenshot](documentation/bugs/bug-3-fix.png)
+![screenshot](documentation/bugs/bug-three/bug-three-screenshot-one.png)
 
-![screenshot](documentation/bugs/bug-3-after.png)
+After some time analysing the javacript code, I realised that the arrangement of my divs was wrong.
 
-### 4 - Gap under Header
+![screenshot](documentation/bugs/bug-three/bug-three-screenshot-two.png)
 
-At tablet width, there was a conspicuous gap between the header and the main section.  
+![screenshot](documentation/bugs/bug-three/bug-three-screenshot-three.png)
 
-![screenshot](documentation/bugs/bug-4-before.png)
+Once this was fixed, the intro sequence started and the game was operational.
 
-Through adjusting the margin-top property of the main element, I managed to remove this gap. 
+![screenshot](documentation/bugs/bug-three/bug-three-fix.gif)
 
-![screenshot](documentation/bugs/bug-4-after.png)
+### 4 - Enemy animation not working
 
-### 5 - Uneven Appearance of Elements within Flex Container
+The very first enemy animation sequence featuring the cat was not functional at first.
 
-Although I had correctly arranged the three testimonial boxes into a flex container, they did not have a uniform appearance. 
+However, I eventually figured out that the animation property included a semi-colon before the ending quotation mark. 
+![screenshot](documentation/bugs/bug-four/bug-four-screenshot-one.png)
 
-![screenshot](documentation/bugs/bug-5-before.png)
+Once this was removed, the animation was functional again.
 
-With some research I came upon the align-items:stretch property. 
+![screenshot](documentation/bugs/bug-four/bug-four-screenshot-two.png)
 
-![screenshot](documentation/bugs/bug-5-fix.png)
+### 5 - Enemy animations and prayer display area not loading properly between rounds
 
-This fixed the problem completely. 
+The animations and prayer display area did not load properly transitioning from the first typing round to the second
 
-![screenshot](documentation/bugs/bug-5-after.png)
+![screenshot](documentation/bugs/bug-five/bug-five-issue.gif)
 
-### 6 - Flex Container Not Working
+This was frustrating, as I had been very diligent in ensuring that Event Listeners attached to buttons were connected to the right elements in the DOM. 
 
-I spent an hour and a half on this bug. 
+![screenshot](documentation/bugs/bug-five/bug-five-screenshot-one.png)
 
-![screenshot](documentation/bugs/bug-6-before.png)
+With some research using ChatGPT, I eventually realised that my code was producing unexpected behaviour as I was adding multiple Event Listeners to the same element, without removing the previous Event Listener. I had assumed that an Event Listener applied to an element as part of a javascript function would go out of scope at the end of the function, but this is not the case - as the Event Listener is applied to an element in the DOM, it does not go out of scope as I had expected. I then went through my code and sought to remove Event Listeners applied to elements once that functionality had ended.
 
+![screenshot](documentation/bugs/bug-five/bug-five-screenshot-two.png)
 
-I looked at each individual element in detail, before I realised that there was an empty div in the middle of the flex container which introduced a 7th, empty services-box element and completely disrupted the orderly flow of these six elements. 
+Once this fix was applied, the program ran as expected.
 
-![screenshot](documentation/bugs/bug-6-issue.png)
+### 6 - Start Button/How to Play Button
 
-Once this div was removed, the six boxes cooperated reliably with one another. 
+Through bug-testing the game, I found that the game could continue with the How to Play box onscreen if it was not turned off before pressing the Start button. When this would happen, there would be no way to turn the box off after the game had started.
 
-![screenshot](documentation/bugs/bug-6-after.png)
+![screenshot](documentation/bugs/bug-six/bug-six-issue.gif)
 
-### 7 - Testimonial Boxes aligning to the left
+To fix this, I removed the inline javascript 'onclick=function()' functionality I had in the HTML as a means to ensure separation of concerns and follow best practice in this respect. I then added Event Listeners instead, and provided the following code to ensure that users could not click the Start button while the How to Play box was displayed.
 
-The testimonial boxes were not centered. It can be seen below that while the Testimonials Text was centred within the viewport, the testimonial box directly under it relating to Lou McGill was to the left. 
+![screenshot](documentation/bugs/bug-six/bug-six-fixed-code.png)
 
-![screenshot](documentation/bugs/bug-7-before.png)
-
-By limiting the width of each viewport to 25vw, this issue was resolved.
-
-![screenshot](documentation/bugs/bug-7-fix.png)
-
-![screenshot](documentation/bugs/bug-7-after.png)
-
-### 8 - Horizontal Overflow on Contact Page
-
-Due to an error in the relationship between the contact form on the right and the text on the left, the contact page for laptop and desktop was skewed in such a way that introduced horizontal overflow.
-
-![screenshot](documentation/bugs/bug-8-before.png)
-
-By placing these elements, which were flex containers themselves, into another flex container which had a flex-direction:row property and a max-width of 60vw, this bug was resolved.
-
-![screenshot](documentation/bugs/bug-8-fix.png)
-
-![screenshot](documentation/bugs/bug-8-after.png)
-
-### 9 - Broken File Path for Easter Egg Icon
-
-Late in development, the icon for the Baby Jay Easter Egg page was missing.
-
-![screenshot](documentation/bugs/bug-9-before.png)
-
-I realised that this was because I had changed the file name in the assets folder, removing capital letters and spaces. However, I had forgotten to reflect these changes in the html code. 
-
-![screenshot](documentation/bugs/bug-9-issue.png)
-
-Once this was rectified, the logo returned.
-
-![screenshot](documentation/bugs/bug-9-fix.png)
-
-
-
-![screenshot](documentation/bugs/bug-9-after.png)
 
 ## Unfixed Bugs
 
-During my time working on this project, I have noticed that there are three problems raised within Gitpod. 
+During my time working on this project, I have noticed that there were two problems raised within my IDE. 
 
-![screenshot](documentation/unfixed-bug/unfixed-bug.png)
+![screenshot](documentation/unfixed-bugs/unfixed-bug-one.png)
 
 Having done some research on Stack Overflow, Google, Phind, etc, I believe that this bug may relate to the recent Gitpod migration process that Code Institute has carried out. In any case, it does not seem to have any bearing on the operation of my website, so I have left this bug unaddressed for now. 
 
+Every tenth time playing through the game, I will find that the game will exhibit unexpected behaviour. The behaviour is inconsistent, and is likely due to the extent to which I used Event Listeners on the same element.
+
+![screenshot](documentation/unfixed-bugs/unfixed-bug-two.gif)
+
+Even if I subsequently removed an Event Listener from an element before adding another, the way I approached this aspect of my code, in hindsight, was probably improper. In the future, when I apply an Event Listener to an element for it to operate as a button, it would be best to give that element that sole functionality, and not try to constantly manipulate the same elements of the DOM to provide functionality. Given the scope of the project, refactoring script.js would have been too onerous. However, trying to understand this issue and rectify it over the last few days has been very educational, and I'll know not to do it again in future projects. 
+
 > [!NOTE]  
-> There are no remaining bugs that I am aware of.
+> There are no other remaining bugs that I am aware of.
