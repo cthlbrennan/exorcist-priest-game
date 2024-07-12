@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Exorcist Priest is a narrative-focused speed typing game which features custom 'hand-pixeled' art and animations designed by Cathal Brennan. The website follows a priest returning home to find his family in various states of demonic possession. Assuming the role of the priest player character, the player must type Latin exorcism prayers before a timer runs out in order to get to get to the next round and continue to the end of the story. The objective of the website is to provide users with an interactive, challenging and humourous experience. Users will appreciate the art work, dialogue and humour of the story, as well as the challenge of typing one of multiple randomly selected Latin phrases under pressure.  
+Exorcist Priest is a narrative-focused speed typing game which features custom 'hand-pixeled' art and animations. The website follows a priest returning home to find his family in various states of demonic possession. Assuming the role of the priest player character, the player must type Latin exorcism prayers before a timer runs out in order to get to get to the next round and continue to the end of the story. The objective of the website is to provide users with an interactive, challenging and humourous experience. Users will appreciate the art work, dialogue and humour of the story, as well as the challenge of typing one of multiple randomly selected Latin phrases under pressure.  
 
 ![Responsive designs](documentation/introduction/am-i-responsive.gif)
 
@@ -92,148 +92,102 @@ I used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 Upon arriving on the main menu, the logo is apparent at the top of the screen. This tells the user what website they are on. 
 
+#### Landing Page Animation Loop
+
+![Landing Page Animation Loop](documentation/features/main-menu-animation-loop.gif)
+
+The landing page of the website is primarily characterised by the stylised pixel art cross, which features a loop of a gleaming effect.
+
 #### Navigation Bar
 
-![Navigation Bar](documentation/features/navbar.png)
+![Navigation Bar](documentation/features/nav-bar.png)
 
-Upon entering the page, it is immediately apparent to the user that there is a menu that provides them links to the pages of the website. This makes the page easily navigable for the user. 
+Upon entering the page, there is clearly a navigation bar that orients the user and gives them two options as to where they can go. 
 
-#### Dropdown Menu
+#### Start Button
 
-![Dropdown Menu](documentation/features/dropdown-menu.png)
+![Start Button](documentation/features/start-button.gif)
 
-At mobile and tablet screen width, the menu options are accessed through a dropdown menu via a hamburger icon.
+Clicking the Start Button starts the game. 
 
-#### Menu Options
+#### How to Play Button and Return Buttons
 
-![Menu Options](documentation/features/menu-options-hover.png)
+![How to Play and Return Buttons](documentation/features/how-to-play-button.gif)
 
-For desktop computers, if the cursor of the mouse is hovered on the menu options, they will respond by changing colour over 0.4 seconds. This level of interactivity lends an air of professionalism to the business, and provides visual engagement to the user, enticing them to explore more of the website and discover more about the business. 
-
-#### Hero Image on Index Page
-
-![Hero Image, index.html](documentation/features/hero-image-index.png)
-
-A large image showing Siobhan at work in a recording studio sets the tone for the website, and tells the user about the substance of the business and the industry in which they operate. This is further elucidated by the white text on the slightly transparent green background above the image. 
-
-#### About Section
-
-![About Section](documentation/features/about-section.png)
-
-This section provides a concise summary of Siobhan's expertise and experience. The website respects the user's time by cutting right to the core of the business. 
-
-#### Call-to-Action Buttons
-
-![Call-to-Action Buttons](documentation/features/call-to-action-hover.png)
-
-Below the About section, there is a large button which invites the user to click it. This brings the user directly to the Contact Us page. This call-to-action button is a great feature which encourages interaction from the user. It also helps the business, as it encourages potential clients to reach out for a consultation. These are also included underneath the Industry section discussed below, as well as the bottom of the Services page.
-
-#### Industry Section
-
-![Industry Section](documentation/features/industry-section.png)
-
-This section gives a synopsis of the podcasting industry in Ireland, while highlighting the need for a professional product that can get ahead of the crowd. Once again, a call-to-action button is included underneath this section, this time leading to the Services page.
-
-#### Testimonials
-
-![Testimonials](documentation/features/testimonials.png)
-
-Three testimonials are set out here. At the moment, these images are placeholder AI-generated images taken from the website https://thispersondoesnotexist.com/. Furthermore, the names and comments are fictional and also act as placeholders. 
+Clicking the How to Play button makes a box pop up which shows the rules of the game. A Return button allows the user to return back to the main menu. 
 
 #### Favicon
 
 ![Favicon](documentation/features/favicon.png)
 
-The pages of the website have a favicon of Baby Jay - an illustration of Siobhan's cat which was made on an open-source software called Inkscape. 
+The pages of the website have a favicon of the cross from the animation loop on the main menu/landing page. 
 
-#### Footer
+#### Footer and Social Media Link
 
-![Footer](documentation/features/footer.png)
+![Social Media Link and Footer](documentation/features/social-media-link.png)
 
-The footer is present on every page. It contains contact information (placeholders for email and phone number at the moment) and the logo text in reverse colours. The colours used are a mirror of the header, telling the user visually that they are at the bottom of the page. 
-
-#### Social Media Links
-
-![Social Media Links](documentation/features/social-media-links.png)
-
-The footer also contains icons from https://www.fontawesome.com. These icons can be linked, sending the user to the corresponding social media website in a new tab. Each icon has an Aria label to promote accessibility. At the moment, the links just lead to the home page of each social media website, but these would eventually lead to Siobhan's social media pages once she has them set up in due course.
-
-#### Copyright
-
-![Copyright Line](documentation/features/copyright.png)
-
-A short sentence regarding copyright is included at the bottom of each page. 
-
-#### Easter Egg Icon
-
-![Easter Egg Icon](documentation/features/easter-egg-icon.png)
-
-In the bottom left corner of the home page, there is an icon which is the same as that which is used for the favicon. Clicking it leads the user to a hidden page. Once again, this icon has a Aria label to promote accessibility for all users. 
-
-#### Easter Egg Page
-
-![Easter Egg Page](documentation/features/easter-egg-page.png)
-
-Upon clicking the "easter egg" icon as discussed above, users are led to this page which gives context for the name of the business. The use of an oblique "easter egg" like this gives the website and business an air of creativity and playfulness, while also encouraging users to look thoroughly through the site for any other quirks. 
-
-#### Hero Image on Services Page
-
-![Hero Image, services.html](documentation/features/hero-image-services.png)
-
-This large image greets the user on the Services page. The image and the accompanying text overlay provides further context on the nature of the business - it is a boutique business that provides custom solutions for the client. Like all other elements of the website, it has been designed to be responsive to different devices. 
-
-#### Services Section
-
-![Services section](documentation/features/services-section.png)
-
-The services page contains a section comprising six boxes, each with an icon from https://fontawesome.com, a headline, and information on a particular service which Siobhan can provide to prospective clients. This gives users a strong idea of the breadth of skills that Siobhan has, and how she could be of assistance professionally to them.  
-
-#### Interactive Audio
-
-![Interactive Audio Clips](documentation/features/interactive-audio.png)
-
-The Audio Editing box of the services section contains two audio clips. These are not autoplaying upon the opening of the page, as per best UX practice. The user can use the controls to hear the recordings. The first plays a poor quality piece of audio, the second plays the same audio but restored, thereby showing Siobhan's skill at audio repair to the user. 
-
-#### Contact Form
-
-![Contact Form](documentation/features/contact-form.png)
-
-The page has a fully responsive contact form. 
-
-Each of the fields must be complete in order for a form to be submitted, as shown below:
-
-![Name required](documentation/features/contact-name-required.png)
-
-![Email address required](documentation/features/contact-email-required.png)
-
-![Message required](documentation/features/contact-message-required.png)
-
-![Consent Required](documentation/features/contact-consent-required.png)
-
-This ensures that Siobhan wouldn't have to deal with incomplete messages that would lack vital contact information, creating a situation where she could miss out on work. This also helps the user avoid forgetting to provide their contact information on their part. 
-
-#### Form Submission Page
-
-![Form Submission Page](documentation/features/form-submission-page.png)
-
-The page appears upon submission of the form. It appears for five seconds, before sending the user back to the home page. This assures the user that their message has been sent. At the moment, there is no database set up for storing messages - this would need to be set up later.
+The footer is present on the main page and the 404 page. It constantly remains at the bottom of the webpage at all times. It contains a social media link that opens up in a new tab. 
 
 #### 404 Page
 
 ![404 Page](documentation/features/error-page.png)
 
-If there is a 404 error, the user will be sent to the 404 page. This page features a variation of the illustration, with Baby Jay having an angry expression. 
+If there is a 404 error, the user will be sent to the 404 page. This page features an illustration of the priest player character, with a Return to Main Menu button which provides a link back to index.html.  
+
+#### Opening Sequence
+
+![Opening Sequence](documentation/features/opening-sequence.gif)
+
+Upon clicking the Start button on the main page, an opening animation with first-person narration from the perspective of the priest player character commences. 
+
+#### Continue Button
+
+![Continue Button](documentation/features/continue-button.png)
+
+After the opening sequence and between typing rounds, the Continue button allows the user to interact with the website and progress to the next part of the game and story.
+
+#### Prayer Display, Player Input and Timer
+
+![Prayer Display, Player Input and Timer](documentation/features/prayer-display-player-input.gif)
+
+The main gameplay mechanic is facilitated through these three boxes, which appear once a typing round begins. The player is must type what is shown in the Prayer Display area in the Player Input area. If the input is correct, the corresponding character in the Prayer Display area turns green in colour. If the input is incorrect, the corresponding character turns red. The correct input must be put into the Player Input area before the timer counts down from ten to zero, or the player will lose the game.
+
+Under the hood, the game inserts one of 20 Latin phrases into the Prayer Display Area. This ensures replayability and that the player won't play the same game twice.
+
+#### Reactive Enemy Animation Display
+
+![Enemy Animation Display](documentation/features/enemy-animation-display.gif)
+
+Each typing round is characterised by a section which displays enemy intro, fight, and defeat animations.
+
+![Reactive Enemy Animation Display](documentation/features/enemy-animation-display-reactive.gif)
+
+Upon clicking the Next button, the animation display reacts and changes. The animation also changes from the respective enemy's fight animation to their defeat animation once the user correctly types out the Latin phrase before the timer runs out.
+
+#### Lose State
+
+![Lose State](documentation/features/lose-state.gif)
+
+If the player fails to enter the prayer before the timer runs out, a box appears stating "You lose! Try again". Upon clicking the red "Retry" button, the player is returned to the main menu. 
+
+#### Closing Animation and Return to Main Menu Button
+
+![Closing Animation and Return to Main Menu Button](documentation/features/closing-sequence-return-to-main-menu.gif)
+
+If the player completes all three rounds successfully, they will the closing sequence and see the end of the story. Once the final animation is playing, a button will appear providing access back to the main menu. 
 
 ### Future Features
 
-- SQL Database
-    - This will be needed in order to store messages sent through the contact form.
-- Testimonials
-    - Testimonials and images from real people that Siobhan works with will be used within the testimonial section, replacing the current fictional placeholders. Incorporating a carousel feature for this section would also lend additional interactivity and dynamism to the website that would raise the level of professionalism.  
-- Social Media Links
-    - The links will lead to Siobhan's relevant socials, not placeholders. 
-- Photos
-    - Higher-quality resolution photographs would be needed in the future, especially for the hero images.
+- Audio
+    - Originally, an interactive audio component was to be included. However, it was too much work within the timeframe of the project. Intro and outro music, fight music, and transition chimes between scenes will be needed for a truly immersive experience. 
+- Health System
+    - Instead of a round per enemy, it would be better if there were multiple rounds per enemy. If the player failed to enter the text in time, they would lose one heart out of a maximum of three; upon winning a round, the player would recover some health before moving onto the next round.
+- Increasing difficulty
+  - The length of the phrases to be typed and the amount of available time will become more challenging as the levels progress. 
+- Larger RPG World
+  - Using a web library such as phaser.js or three.js, a top-down RPG style environment could be created in which the player character could freely move about. Typing rounds could be triggered in the same manner as turn-based battles in RPGs. 
+- Improved Art
+  - ... and more of it - more animations, more detail, more characters. 
 
 ## Tools & Technologies Used
 
@@ -243,12 +197,13 @@ If there is a 404 error, the user will be sent to the 404 page. This page featur
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
 - [![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) used for user interaction on the site.
 - [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) used for hosting the deployed front-end site.
 - [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
-- [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
+- [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the social media link icon.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
-
-I have also Inkscape for creating the Baby Jay Illustration, and Phind for some explanation of HTML and CSS concepts. 
+- [Aseprite](https://www.aseprite.org/) was used in the creation of the custom pixel art assets. 
+- [EZGif](https://ezgif.com/video-to-gif) was used to convert MP4 screengrabs into gifs seen in README.md and TESTING.md. 
 
 ## Testing
 
@@ -259,11 +214,11 @@ I have also Inkscape for creating the Baby Jay Illustration, and Phind for some 
 
 The site was deployed to GitHub Pages. The steps to deploy are as follows:
 
-- In the [GitHub repository](https://github.com/cthlbrennan/Baby-Jay-Productions), navigate to the Settings tab 
+- In the [GitHub repository](https://github.com/cthlbrennan/exorcist-priest-game), navigate to the Settings tab 
 - From the source section drop-down menu, select the **Main** Branch, then click "Save".
 - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](https://cthlbrennan.github.io/Baby-Jay-Productions)
+The live link can be found [here](https://cthlbrennan.github.io/exorcist-priest-game/)
 
 ### Local Deployment
 
@@ -273,28 +228,21 @@ This project can be cloned or forked in order to make a local copy on your own s
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository](https://github.com/cthlbrennan/Baby-Jay-Productions) 
+1. Go to the [GitHub repository](https://github.com/cthlbrennan/exorcist-priest-game) 
 2. Locate the Code button above the list of files and click it 
 3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
 4. Open Git Bash or Terminal
 5. Change the current working directory to the one where you want the cloned directory
 6. In your IDE Terminal, type the following command to clone my repository:
-	- `git clone https://github.com/cthlbrennan/Baby-Jay-Productions.git`
+	- `git clone https://github.com/cthlbrennan/exorcist-priest-game.git`
 7. Press Enter to create your local clone.
-
-Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/cthlbrennan/Baby-Jay-Productions)
-
-Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
-A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
 
 #### Forking
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
 You can fork this repository by using the following steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/cthlbrennan/Baby-Jay-Productions)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/cthlbrennan/exorcist-priest-game)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
@@ -309,30 +257,22 @@ To my knowledge, there is no difference between the local version on Gitpod and 
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Code Institute](codeinstitute.net) | Entire Site | Some stucture and code taken from Love Running Walkthrough Project and HTML and CSS Essentials Modules |
-| [Geeks for Geeks](https://www.geeksforgeeks.org/html-how-to-add-testimonials) | Index.html | Code formed basis for testimonial section |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Free Code Camp](https://www.freecodecamp.org/news/how-to-center-an-image-in-a-div-css/) | index.html | use of align-items:stretch declaration based on the article, 'CSS Image Centering – How to Center an Image in a Div'
-|[Audioeye](https://audioeye.com) | entire site | colour contrast tool 
+| [Code Institute](codeinstitute.net) | Entire Site | Some stucture and code taken from Love Maths Walkthrough Project and Javascript Essentials Module |
+| [W3 Schools](https://www.w3schools.com/js/js_arrow_function.asp) | script.js | Use of arrow functions|
+|[W3 Schools](https://www.w3schools.com/jsref/met_win_settimeout.asp) | script.js | Use of setTimeout() |
 |[UI.dev](https://ui.dev/amiresponsive) | entire site | Am I Responsive tool
 |[Coolors](https://coolors.co) | entire site | Palette Generator Tool
-|[Fontjoy](https://fontjoy.com) | entire site | Font Pairing Tool
-
+|[Drew Conley](https://www.youtube.com/watch?v=ekI7vjkFrGA) | entire site | Video, 'Spritesheet Animation with HTML and CSS'|
+|[Web Dev Simplified](https://www.youtube.com/watch?v=R-7eQIHRszQ) | entire site | Video, 'Build a Speed Typing Game with Javascript'|
 
 ### Media
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| Created by Myself on Inkscape | entire site | image | favicon on all pages |
-| Created by Myself on Inkscape | 404.html | image | angry baby jay illustration |
-| Siobhan Brosnan |Index.html and services.html | image | hero images and about section image|
-| Siobhan Brosnan |services.html | audio | audio repair clips
-| Siobhan Brosnan |easteregg.html | image | image of Baby Jay |
-| [Google Fonts](https://fonts.google.com/) | product page | fonts | further information and links to fonts provided above in Typography section|
-| [Pexels](https://www.pexels.com/photo/microphone-on-tripod-attached-to-laptop-in-studio-6953871/) | index.html | image | image of microphone and laptop in industry section |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com/) | index.html | image | AI-generated images for testimonials section |
-| [Font Awesome](https://fontawesome.com) | index.html and services.html | image | icons used in social media links and services section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| Created by Cathal Brennan on Aseprite | entire site | Pixel Art Images | All pixel assets |
+| [Font Awesome](https://fontawesome.com) | entire site | image | Social media link icons in footer |
+| [Leonardo Costa](https://fontstruct.com/fontstructions/show/1344429/gothic-pixel-font-1) | entire site | font | Gothic Pixel Font |
+| [Patrik Arts](https://patrik-arts.itch.io/pixel-font-low-gothic) | entire site | image | Low Gothic Font |
 
 
 ### Acknowledgements

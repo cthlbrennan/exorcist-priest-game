@@ -85,7 +85,9 @@ main {
     margin: 1rem auto;
 }
 
-/* overall width of cross spritesheet, and animation styling which features the 'intro-spritesheet' keyframe */
+/* overall width of cross spritesheet, and animation styling which features the 'intro-spritesheet' keyframe 
+Animation programming based on video by Drew Conley - "Spritesheet animation tutorial with HTML and CSS" - 
+https://www.youtube.com/watch?v=ekI7vjkFrGA*/
 #intro-animation-display {
     animation: intro-spritesheet 3s steps(30) infinite;
     width: 7680px;
